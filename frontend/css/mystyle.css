@@ -1,0 +1,65 @@
+#logo-img {
+    width: 20px;
+}
+nav {
+    background-color: khaki;
+    padding: 10px;
+}
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.logo {
+    justify-self: flex-start;
+}
+.nav-link {
+    color: black;
+}
+.active {
+    color: teal;
+    border-bottom: 1px solid teal;
+}
+#main-page {
+    background-color: white;
+}
+#filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.dropdown {
+    margin: 10px;
+}
+
+#dropdownMenu1{
+    border-style: none;
+}
+.card {
+    box-shadow: 0 0 10px -5px black;
+    margin: 10px;
+}
+.card-img-top {
+    width: 100%;
+}   
+.card-body {
+    padding: 10px;
+}
+.card-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-footer-img {
+    width: 15%;
+}
+#products {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}

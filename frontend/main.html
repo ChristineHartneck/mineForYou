@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mine For You</title>
+        <!-- Das neueste kompilierte und minimierte CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/mystyle.css">
+        <link rel="stylesheet" href="./css/open-iconic-bootstrap.css">
+    </head>
+    <body>
+        <nav id="menu-wrapper">
+            <ul class="nav">
+                <li role="presentation" class="nav-item logo">
+                    <a class="navbar-brand" href="#">
+                        <img id="logo-img" alt="Titel" src="src/html5.png">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Personal</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Liked</a>
+                </li>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sell</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Logout</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="main-page">
+            <section id="filter">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="true">
+                        GENDER
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="#">Men</a></li>
+                        <li><a href="#">Woman</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="true">
+                        CATEGORY
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="#">Jeans</a></li>
+                        <li><a href="#">Trouser</a></li>
+                        <li><a href="#">Dress</a></li>
+                        <li><a href="#">Top</a></li>
+                        <li><a href="#">Shirt</a></li>
+                        <li><a href="#">Cardigan</a></li>
+                        <li><a href="#">Bag</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="true">
+                            SIZE
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">XXS</a></li>
+                            <li><a href="#">XS</a></li>
+                            <li><a href="#">S</a></li>
+                            <li><a href="#">M</a></li>
+                            <li><a href="#">L</a></li>
+                            <li><a href="#">XL</a></li>
+                            <li><a href="#">XXL</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="true">
+                            COLOUR
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">White</a></li>
+                            <li><a href="#">Black</a></li>
+                            <li><a href="#">Blue</a></li>
+                            <li><a href="#">Brown</a></li>
+                            <li><a href="#">Yellow</a></li>
+                            <li><a href="#">Green</a></li>
+                            <li><a href="#">Orange</a></li>
+                            <li><a href="#">Red</a></li>
+                            <li><a href="#">Purple</a></li>
+                        </ul>
+                    </div>
+            </section>
+            <section id="products">
+            </section>
+        </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src= "./script.js"></script>
+</html>
