@@ -1,9 +1,10 @@
 #logo-img {
-    width: 20px;
+    width: 140px;
 }
 nav {
-    background-color: khaki;
+    /*background-color: khaki;*/
     padding: 10px;
+    margin-bottom: 25px;
 }
 .nav {
     display: flex;
@@ -15,11 +16,11 @@ nav {
     justify-self: flex-start;
 }
 .nav-link {
-    color: black;
+    color: #3E4551;
 }
 .active {
-    color: teal;
-    border-bottom: 1px solid teal;
+    color: #27ccc0;
+    border-bottom: 2px solid #27ccc0;
 }
 #main-page {
     background-color: white;
@@ -30,11 +31,21 @@ nav {
     justify-content: center;
     align-items: center;
 }
+#search{
+    justify-content: flex-end;
+}
+.form-inline > button{
+    color: #27ccc0;
+    border: 1px solid #27ccc0;
+}
 .dropdown {
+    color: #3E4551;
     margin: 10px;
+    margin-bottom: 25px;
 }
 
 #dropdownMenu1{
+    color: #3E4551;
     border-style: none;
 }
 .card {
