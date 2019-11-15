@@ -1,10 +1,16 @@
+*{
+    box-sizing: border-box;
+    margin-top: 3px;
+  }
+
 #logo-img {
     width: 140px;
+    margin-left: 30px;
 }
 nav {
     /*background-color: khaki;*/
     padding: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
 }
 .nav {
     display: flex;
@@ -12,36 +18,43 @@ nav {
     justify-content: flex-end;
     align-items: center;
 }
-.logo {
-    justify-self: flex-start;
-}
+
 .nav-link {
     color: #3E4551;
 }
 .active {
+    background-color: white;
     color: #27ccc0;
     border-bottom: 2px solid #27ccc0;
 }
 #main-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     background-color: white;
 }
 #filter {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-#search{
-    justify-content: flex-end;
+    
 }
 .form-inline > button{
+    background-color: white; 
     color: #27ccc0;
-    border: 1px solid #27ccc0;
+    border: 2px solid #27ccc0;
+}
+.form-inline > button:hover {
+    
+    background-color: #27ccc0;
+    color: white;
 }
 .dropdown {
     color: #3E4551;
     margin: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+}
+.dropdown-menu:hover {
+    background-color: #27ccc0;
 }
 
 #dropdownMenu1{
@@ -51,6 +64,7 @@ nav {
 .card {
     box-shadow: 0 0 10px -5px black;
     margin: 10px;
+    border-radius: 3px;
 }
 .card-img-top {
     width: 100%;
@@ -73,4 +87,31 @@ nav {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+}
+.modal-dialog{
+    background-color: white;
+    border-radius: 5px;
+}
+.modal-title{
+        color: #3E4551;
+        text-align: center;
+        border-bottom: 2px solid #27ccc0;
+
+.modal-body {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.modal-price{
+    color: #27ccc0;
+}
+
+.modal-footer > #button_1 {
+    background-color: white; 
+    color: #27ccc0;
+    border: 2px solid #27ccc0;
+}
+.modal-footer > #button_2 {
+    background-color: #27ccc0; 
+    color: white;
+    border: 2px solid #27ccc0;
 }
