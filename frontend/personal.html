@@ -1,41 +1,98 @@
 <!DOCTYPE html>
-<html lang="de">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Mine For You</title>
-        <!-- Das neueste kompilierte und minimierte CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./css/mystyle.css">
-        <link rel="stylesheet" href="./css/open-iconic-bootstrap.css">
-    </head>
-    <body>
-        <a class="navbar-brand" href="#">
-            <img id="logo-img" alt="Titel" src="src/mineForYou.png">
-        </a>
-        <nav id="menu-wrapper">
-            <ul class="nav">
+<html lang="en">
 
-                <li class="nav-item">
-                    <a class="nav-link" href="main.html">HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="personal.html">Personal</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="liked.html">Liked</a>
-                </li>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="sell.html">Sell</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Logout</a>
-                </li>
-            </ul>
-        </nav>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mine For You</title>
+    <!-- Das neueste kompilierte und minimierte CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/mystyle.css">
+    <link rel="stylesheet" href="./css/open-iconic-bootstrap.css">
+</head>
 
-    </body>
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<body>
+    <a class="navbar-brand" href="#">
+        <img id="logo-img" alt="Titel" src="src/mineForYou.png">
+    </a>
+    <nav id="menu-wrapper">
+        <ul class="nav">
+
+            <li class="nav-item">
+                <a class="nav-link" href="main.html">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="personal.html">Personal</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="liked.html">Liked</a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="sell.html">Sell</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Logout</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <section id="listing">
+            <form>
+                <fieldset id="field">
+                    <legend>
+                        Personal page
+                    </legend>
+                    <ul id="details">
+                        <li>
+                            name
+                        </li>
+                        <li>
+                            purchases: 0
+                        </li>
+                        <li>
+                            sales: 0
+                        </li>
+                        <li>
+                            total spent ($): 0
+                        </li>
+                        <li>
+                            total earned ($): 0
+                        </li>
+                    </ul>
+                    <section id="producthistory">
+                        1
+                    </section>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+</body>
+<footer>
+    <section id="about">
+        <div>
+            At mineForYou we are focussed on customer satisfaction and security. We hope you
+            can find what you are looking for and if you have an issues or questions,
+            don't hesitate to contact us:
+        </div>
+        <address class="address">
+            Av. Eugenio Garza Sada 2501 Sur,
+            Tecnológico,
+            Monterrey,
+            Nuevo Leon,
+            64849,
+            Mexico,
+            8123909743
+        </address>
+        <address id="emails">
+            <a href="mailto:jordanallen.2.1994@gmail.com">jordanallen.2.1994@gmail.com</a>
+            <a href="mailto:ch-hartneck@mail.de">ch-hartneck@mail.de</a>
+        </address>
+    </section>
+</footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 </html>

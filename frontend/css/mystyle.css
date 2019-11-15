@@ -36,7 +36,30 @@ nav {
 #filter {
     display: flex;
     flex-direction: row;
-    
+}
+#details{
+    list-style: none;
+}
+#about{
+    border-top: 1px solid lightgrey;
+    text-align: center;
+}
+#emails{
+    display: flex;
+    flex-direction: column;
+}
+#listing{
+    padding-left: 10px;
+}
+#create{
+    margin: 10px;
+    background-color: white; 
+    color: #27ccc0;
+    border: 2px solid #27ccc0;
+}
+#create:hover{
+    background-color: #27ccc0;
+    color: white;
 }
 .form-inline > button{
     background-color: white; 
@@ -96,7 +119,7 @@ nav {
         color: #3E4551;
         text-align: center;
         border-bottom: 2px solid #27ccc0;
-
+}
 .modal-body {
     text-align: center;
     margin-bottom: 10px;
