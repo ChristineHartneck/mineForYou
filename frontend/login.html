@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mine For You</title>
+    <!-- Das neueste kompilierte und minimierte CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/mystyle.css">
+    <link rel="stylesheet" href="./css/open-iconic-bootstrap.css">
+</head>
+
+
+<body id="login-bod">
+    <div>
+        <a class="navbar-brand" href="#">
+            <img id="logo-img" alt="Title" src="src/mineForYou.png">
+        </a>
+    </div>
+    <main>
+        <section id="login">
+            <form>
+                <fieldset>
+                    <div>
+                        <label for="username">Username:</label>
+                    </div>
+                    <span class="error">
+                        <div>
+                            <input type="text" id="username" class="formElement" />
+                        </div>
+                        <div id="usernameerror">
+                        </div>
+                    </span>
+
+                    <div>
+                        <label for="password">Password:</label>
+                    </div>
+                    <span class="error">
+                        <div>
+                            <input type="password" id="password" class="formElement" />
+                        </div>
+                        <div id="passworderror">
+                        </div>
+                    </span>
+
+                    <div>
+                        <label for="passwordconfirmation">Password Confirmation:</label>
+                    </div>
+                    <span class="error">
+                        <div>
+                            <input type="password" id="passwordconfirmation" class="formElement" />
+                        </div>
+                        <div id="passwordconfirmationerror">
+                        </div>
+                    </span>
+
+                    <div>
+                        <input class="formButton" type="submit" value="Login" id="Login" />
+                        <input class="formButton" type="submit" value="Sign-up" id="Sign-up" />
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="./index_login_jquery.js"> </script>
+</body>
+
+</html>

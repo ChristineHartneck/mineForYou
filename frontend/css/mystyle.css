@@ -61,6 +61,34 @@ nav {
     background-color: #27ccc0;
     color: white;
 }
+#login{
+    border: 1px solid lightgray;
+    padding-left: 20px;
+}
+#login-bod{
+    display: flex;
+    flex-direction: column;
+}
+#Login{
+    margin: 10px;
+    background-color: white; 
+    color: #27ccc0;
+    border: 2px solid #27ccc0;
+}
+#Login:hover{
+    background-color: #27ccc0;
+    color: white;
+}
+#Sign-up{
+    margin: 10px;
+    background-color: white; 
+    color: #27ccc0;
+    border: 2px solid #27ccc0;
+}
+#Sign-up:hover{
+    background-color: #27ccc0;
+    color: white;
+}
 .form-inline > button{
     background-color: white; 
     color: #27ccc0;
