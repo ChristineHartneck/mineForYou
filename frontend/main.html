@@ -1,120 +1,174 @@
 <!DOCTYPE html>
-<html lang="de">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Mine For You</title>
-        <!-- Das neueste kompilierte und minimierte CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./css/mystyle.css">
-        <link rel="stylesheet" href="./css/open-iconic-bootstrap.css">
-    </head>
-    <body>
-        <a class="navbar-brand" href="#">
-            <img id="logo-img" alt="Titel" src="src/mineForYou.png">
-        </a>
-        <nav id="menu-wrapper">
-            <ul class="nav">
+<html lang="en">
 
-                <li class="nav-item">
-                    <a class="nav-link active" href="main.html">HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="personal.html">Personal</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="liked.html">Liked</a>
-                </li>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="sell.html">Sell</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Logout</a>
-                </li>
-            </ul>
-        </nav>
-        <div id="main-page">
-            <section id="filter">
-                <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="true">
-                        GENDER
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">Men</a></li>
-                        <li><a href="#">Woman</a></li>
-                    </ul>
-                </div>
-                <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="true">
-                        CATEGORY
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <li><a href="#">Tops</a></li>
-                        <li><a href="#">Trouser</a></li>
-                        <li><a href="#">Shorts</a></li>
-                        <li><a href="#">Skirts</a></li>
-                        <li><a href="#">Dresses</a></li>
-                        <li><a href="#">Jumpers</a></li>
-                        <li><a href="#">Coats</a></li>
-                    </ul>
-                </div>
-                <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="true">
-                            SIZE
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
-                            <li><a href="#">XXS</a></li>
-                            <li><a href="#">XS</a></li>
-                            <li><a href="#">S</a></li>
-                            <li><a href="#">M</a></li>
-                            <li><a href="#">L</a></li>
-                            <li><a href="#">XL</a></li>
-                            <li><a href="#">XXL</a></li>
-                        </ul>
-                    </div>
-                    <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="true">
-                            COLOUR
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
-                            <li><a href="#">Red</a></li>
-                            <li><a href="#">Orange</a></li>
-                            <li><a href="#">Yellow</a></li>
-                            <li><a href="#">Green</a></li>
-                            <li><a href="#">Blue</a></li>
-                            <li><a href="#">Purple</a></li>
-                            <li><a href="#">Orange</a></li>
-                            <li><a href="#">White</a></li>
-                            <li><a href="#">Black</a></li>
-                            <li><a href="#">Multicoloured</a></li>
-                        </ul>
-                    </div>      
-            </section>
-            <section id="search">
-                <div>
-                    <form class="form-inline" action="/action_page.php">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                </div> 
-            </section>
-        </div>
-            <div id = cards> 
-            <section id="products"></section>
-            <section id="models"></section>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mine For You</title>
+    <!-- Das neueste kompilierte und minimierte CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/mystyle.css">
+    <link rel="stylesheet" href="./css/open-iconic-bootstrap.css">
+</head>
+
+<body>
+    <a class="navbar-brand" href="#">
+        <img id="logo-img" alt="Titel" src="src/mineForYou.png">
+    </a>
+    <nav id="menu-wrapper">
+        <ul class="nav">
+
+            <li class="nav-item">
+                <a class="nav-link active" href="main.html">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="personal.html">Personal</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="liked.html">Liked</a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="sell.html">Sell</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Logout</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="main-page">
+        <section id="filter">
+            <div class="filts">
+                <select id="gender" class="sel-filts">
+                    <option value="select" id="sel-item">
+                        Select a gender...
+                    </option>
+                    <option value="male">
+                        Male
+                    </option>
+                    <option value="female">
+                        Female
+                    </option>
+                </select>
             </div>
-          
-    </body>
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src= "./script.js"></script>
+            <div class="filts">
+                <select id="category" class="sel-filts">
+                    <option value="select">
+                        Select a category...
+                    </option>
+                    <option value="tops">
+                        Tops
+                    </option>
+                    <option value="trousers">
+                        Trousers
+                    </option>
+                    <option value="shorts">
+                        Shorts
+                    </option>
+                    <option value="skirts">
+                        Skirts
+                    </option>
+                    <option value="dresses">
+                        Dresses
+                    </option>
+                    <option value="jumpers">
+                        Jumpers
+                    </option>
+                    <option value="coats">
+                        Coats
+                    </option>
+                </select>
+            </div>
+            <div class="filts">
+                <select id="size" class="sel-filts">
+                    <option value="select">
+                        Select a size...
+                    </option>
+                    <option value="xxl">
+                        XXL
+                    </option>
+                    <option value="xl">
+                        XL
+                    </option>
+                    <option value="l">
+                        L
+                    </option>
+                    <option value="m">
+                        M
+                    </option>
+                    <option value="s">
+                        S
+                    </option>
+                    <option value="xs">
+                        XS
+                    </option>
+                    <option value="xxs">
+                        XXS
+                    </option>
+                </select>
+            </div>
+            <div class="filts"> 
+                <select id="colour" class="sel-filts">
+                    <option value="select">
+                        Select a colour...
+                    </option>
+                    <option value="red">
+                        Red
+                    </option>
+                    <option value="orange">
+                        Orange
+                    </option>
+                    <option value="yellow">
+                        Yellow
+                    </option>
+                    <option value="green">
+                        Green
+                    </option>
+                    <option value="blue">
+                        Blue
+                    </option>
+                    <option value="purple">
+                        Purple
+                    </option>
+                    <option value="white">
+                        White
+                    </option>
+                    <option value="black">
+                        Black
+                    </option>
+                    <option value="brown">
+                        Brown
+                    </option>
+                    <option value="multicoloured">
+                        Multicoloured
+                    </option>
+                </select>
+            </div>
+        </section>
+        <div>
+            <form class="form-inline" action="/action_page.php">
+                <button class="btn btn-outline-success" id="filt-bt" type="submit">Filter</button>
+            </form>
+        </div>
+        </section>
+        <section id="search">
+            <div>
+                <form class="form-inline" action="/action_page.php">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </section>
+    </div>
+    <div id=cards>
+        <section id="products"></section>
+        <section id="models"></section>
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="./script.js"></script>
+
 </html>

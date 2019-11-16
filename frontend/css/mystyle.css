@@ -8,7 +8,6 @@
     margin-left: 30px;
 }
 nav {
-    /*background-color: khaki;*/
     padding: 10px;
     margin-bottom: 40px;
 }
@@ -37,6 +36,17 @@ nav {
     display: flex;
     flex-direction: row;
 }
+.filts{
+    margin: 5px;
+}
+.sel-filts{
+    color: rgb(125, 128, 133);
+    border-style: none;
+    padding: 7px;
+}
+#filt-bt{
+    margin-right: 5px;
+}
 #details{
     list-style: none;
 }
@@ -61,13 +71,19 @@ nav {
     background-color: #27ccc0;
     color: white;
 }
-#login{
-    border: 1px solid lightgray;
-    padding-left: 20px;
-}
-#login-bod{
+.container{
     display: flex;
     flex-direction: column;
+}
+.login-logo{
+    margin-bottom: 30px;
+}
+.login-error{
+    padding-left: 15px;
+    color: red;
+}
+.form-group{
+    margin-bottom: 0;
 }
 #Login{
     margin: 10px;

@@ -7,65 +7,44 @@
     <title>Mine For You</title>
     <!-- Das neueste kompilierte und minimierte CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/mystyle.css">
     <link rel="stylesheet" href="./css/open-iconic-bootstrap.css">
 </head>
 
 
 <body id="login-bod">
-    <div>
-        <a class="navbar-brand" href="#">
-            <img id="logo-img" alt="Title" src="src/mineForYou.png">
-        </a>
-    </div>
+    <a class="navbar-brand login-logo" href="#">
+        <img id="logo-img" alt="Title" src="src/mineForYou.png">
+    </a>
     <main>
-        <section id="login">
-            <form>
-                <fieldset>
-                    <div>
-                        <label for="username">Username:</label>
-                    </div>
-                    <span class="error">
-                        <div>
-                            <input type="text" id="username" class="formElement" />
-                        </div>
-                        <div id="usernameerror">
-                        </div>
-                    </span>
-
-                    <div>
-                        <label for="password">Password:</label>
-                    </div>
-                    <span class="error">
-                        <div>
-                            <input type="password" id="password" class="formElement" />
-                        </div>
-                        <div id="passworderror">
-                        </div>
-                    </span>
-
-                    <div>
-                        <label for="passwordconfirmation">Password Confirmation:</label>
-                    </div>
-                    <span class="error">
-                        <div>
-                            <input type="password" id="passwordconfirmation" class="formElement" />
-                        </div>
-                        <div id="passwordconfirmationerror">
-                        </div>
-                    </span>
-
-                    <div>
-                        <input class="formButton" type="submit" value="Login" id="Login" />
-                        <input class="formButton" type="submit" value="Sign-up" id="Sign-up" />
-                    </div>
-                </fieldset>
-            </form>
-        </section>
+        <div class="container">
+            <h2>Login/sign-up</h2>
+            <div class="form-group col-md-4">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
+            </div>
+            <span class="login-error">
+                <div id="usernameerror">
+                </div>
+            </span>
+            <div class="form-group col-md-4">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+            </div>
+            <span class="login-error">
+                <div id="passworderror">
+                </div>
+            </span>
+            <div>
+                <input class="formButton btn btn-outline-success" type="submit" value="Login" id="Login" />
+                <input class="formButton btn btn-outline-success" type="submit" value="Sign-up" id="Sign-up" />
+            </div>
+        </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="./index_login_jquery.js"> </script>
+    <script src="./script_login.js"> </script>
 </body>
 
 </html>
