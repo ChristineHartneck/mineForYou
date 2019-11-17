@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $("#Login").click(function(){
+    $("#login-bn").click(function(){
         event.preventDefault()
         if($("#username").val()==""){
             $("#usernameerror").text("* Please provide your name")
@@ -15,7 +15,7 @@ $(document).ready(function(){
             $("#passworderror").text("")
         }
     })
-    $("#Sign-up").click(function(){
+    $("#sign-up-bn").click(function(){
         event.preventDefault()
         if($("#username").val()==""){
             $("#usernameerror").text("* Please provide your name")
