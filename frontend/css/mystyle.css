@@ -3,6 +3,7 @@
     margin-top: 3px;
   }
 
+/* nav all pages*/
 #logo-img {
     width: 140px;
     margin-left: 30px;
@@ -10,11 +11,16 @@
 nav {
     padding: 10px;
     margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
 }
 .nav {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 }
 
@@ -26,24 +32,101 @@ nav {
     color: #27ccc0;
     border-bottom: 2px solid #27ccc0;
 }
+
+/* main.html*/
 #main-page {
     display: flex;
     flex-direction: row;
     justify-content: center;
     background-color: white;
+    margin: 0 0 30px 0;
 }
+
+#dLabel {
+    width: 240px;
+    height: 36px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: solid 1px #f3f3f3;
+    text-align: left;
+    color: #3E4551;
+    margin: 3px 5px 0 0;
+}
+.caret {
+    float: right;
+    margin-top: 9px;
+    display: block;
+}
+.dropdown-menu {
+  width: 240px;
+  padding: 0;
+  margin: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.dropdown button:hover, .dropdown button:focus {
+    border: none;
+    outline: 0;
+    background-color: white;
+}
+.dropdown.open button#dLabel {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.23);
+    border: solid 1px #f3f3f3;
+    border-bottom: none;
+}
+.dropdown.open ul {
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.23);
+    border: solid 1px #f3f3f3;
+}
+.dropdown-menu li {
+    line-height: 1.5;
+    color: #3E4551;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 7.5px 15px;
+}
+.dropdown-menu li:hover {
+    background-color: #27ccc0;
+    color: white;
+}
+.li-last:hover {
+    border-radius: 0 0 4px 4px;
+}
+.dropdown-menu.dropdown-menu:hover {
+    background-color: white;
+}
+
+#search {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 15px;
+}
+
 #filter {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 .filts{
     margin: 5px;
 }
 .sel-filts{
     color: rgb(125, 128, 133);
+    /*border: 0px solid red;*/
     border-style: none;
     padding: 7px;
+
 }
+.option {
+    background-color: white;
+}
+
+.option:hover {
+    background-color: #27ccc0;
+}
+
 #filt-bt{
     margin-right: 5px;
 }
@@ -75,6 +158,8 @@ nav {
     display: flex;
     flex-direction: column;
 }
+
+/* login.html*/
 .login-logo{
     margin-bottom: 30px;
 }
@@ -111,14 +196,12 @@ nav {
     border: 2px solid #27ccc0;
 }
 .form-inline > button:hover {
-    
+    border: 2px solid #27ccc0;
     background-color: #27ccc0;
     color: white;
 }
 .dropdown {
     color: #3E4551;
-    margin: 10px;
-    margin-bottom: 30px;
 }
 .dropdown-menu:hover {
     background-color: #27ccc0;
@@ -156,6 +239,7 @@ nav {
     flex-wrap: wrap;
 }
 .modal-dialog{
+    width: 60%;
     background-color: white;
     border-radius: 5px;
 }
@@ -167,18 +251,171 @@ nav {
 .modal-body {
     text-align: center;
     margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 .modal-price{
     color: #27ccc0;
 }
 
-.modal-footer > #button_1 {
+.modal-price{
+    color: #27ccc0;
+}
+.modal-img {
+    height: 100%;
+}
+.table {
+    width: 50%;
+    border: 1px solid transparent;
+    padding: 5px;
+}
+#modal-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+}
+.btn-modal {
+    margin: 5px 5px 0 5px;
+}
+#btn-cancel {
     background-color: white; 
     color: #27ccc0;
     border: 2px solid #27ccc0;
 }
-.modal-footer > #button_2 {
+#btn-buy {
     background-color: #27ccc0; 
     color: white;
     border: 2px solid #27ccc0;
+}
+
+#thanks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.24);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+#thanks-wrapper {
+    width: 30%;
+    height: 30%;
+    background-color: white;
+    border-radius: 4px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #27ccc0;
+    box-shadow: 0 0 20px -10px black;
+}
+#thanks-btn {
+    color: #27ccc0;
+    background-color: white;
+    border: 2px solid #27ccc0;
+    margin-top: 50px;
+}
+#thanks-btn:hover {
+    color: white;
+    background-color: #27ccc0;
+    cursor: pointer;
+}
+
+#search-btn {
+    margin-left: 10px;
+}
+.form-inline {
+    display: flex;
+    flex-direction: row;
+}
+
+.input-wrapper {
+    position: relative;
+  }
+  
+  /*.form-control {
+    box-shadow: 0 0 0 0 transparent;
+    color: #3E4551;
+    width: 80%;
+    font-size: inherit;
+    font-family: inherit;
+    background-color: f3f3f3;
+    border: 2px solid transparent;
+    border-bottom-color: #27ccc0;
+  }
+  
+  .form-control:focus {
+    border: none;
+    box-shadow: 0 0 0 0 transparent;
+    outline: none;
+  }
+  
+  .form-control:visited {
+    border: none;
+    box-shadow: 0 0 0 0 transparent;
+    outline: none;
+  }*/
+  
+  .input-span {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    opacity: 0;
+    background-color: #27ccc0;
+    transform-origin: center;
+    transform: translate(-50%, 0) scaleX(0);
+    transition: all 0.3s ease;
+  }
+  
+  /*.form-control:focus ~ span {
+    transform: translate(-50%, 0) scaleX(1);
+    opacity: 1;
+  }*/
+
+  /*sell.html*/
+
+.main-sell{
+    margin-left: 40px;
+}
+#add{
+    margin-top: 20px;
+    background-color: white; 
+    color: #27ccc0;
+    border: 2px solid #27ccc0;
+}
+#add:hover {
+    background-color: #27ccc0;
+    color: white;
+}
+#sell-field{
+    display: flex;
+    flex-direction: column;
+}
+.sellerror{
+    width: 240px;
+    height: 36px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: solid 1px #f3f3f3;
+    text-align: left;
+    color: #3E4551;
+    margin: 3px 5px 0 0;
+}
+.sellerror{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.23);
+    border: solid 1px #f3f3f3;
+    border-bottom: none;
+}
+.sell-err-msg{
+    color: red;
 }

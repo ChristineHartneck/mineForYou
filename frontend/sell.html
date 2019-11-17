@@ -5,7 +5,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mine For You</title>
-    <!-- Das neueste kompilierte und minimierte CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/mystyle.css">
     <link rel="stylesheet" href="./css/open-iconic-bootstrap.css">
@@ -38,51 +37,51 @@
     <main>
         <section id="listing">
             <form>
-                <fieldset id="field">
+                <fieldset id="sell-field">
                     <legend>
                         Create a listing
                     </legend>
-                    <div>
+                    <div class="form-group col-md-4">
                         <label for="picture">Picture url:</label>
                     </div>
-                    <span class="error">
+                    <span class="error col-md-4">
                         <div>
-                            <input type="url" id="picture" class="formElement" />
+                            <input type="url" id="picture" class="formElement form-control" />
                         </div>
-                        <div id="pictureerror">
+                        <div id="pictureerror" class="sell-err-msg">
                         </div>
                     </span>
 
-                    <div>
+                    <div class="form-group col-md-4">
                         <label for="title">Title:</label>
                     </div>
-                    <span class="error">
+                    <span class="error col-md-4">
                         <div>
-                            <input type="text" id="title" class="formElement" />
+                            <input type="text" id="title" class="formElement form-control" />
                         </div>
-                        <div id="titleerror">
+                        <div id="titleerror" class="sell-err-msg">
                         </div>
                     </span>
 
-                    <div>
+                    <div class="form-group col-md-4">
                         <label for="price">Price ($):</label>
                     </div>
-                    <span class="error">
+                    <span class="error col-md-4">
                         <div>
-                            <input type="text" id="price" class="formElement" />
+                            <input type="text" id="price" class="formElement form-control" />
                         </div>
-                        <div id="priceerror">
+                        <div id="priceerror" class="sell-err-msg">
                         </div>
                     </span>
 
-                    <div>
+                    <div class="form-group col-md-4">
                         <label for="description">Description:</label>
                     </div>
-                    <span class="error">
+                    <span class="error col-md-4">
                         <div>
-                            <textarea type="text" id="description" class="formElement"></textarea>
+                            <textarea rows="5" id="description" class="formElement form-control"></textarea>
                         </div>
-                        <div id="descriptionerror">
+                        <div id="descriptionerror" class="sell-err-msg">
                         </div>
                     </span>
 
@@ -91,7 +90,7 @@
                     </div>
                     <span class="error">
                         <div>
-                            <select id="gender">
+                            <select id="gender" class="sellerror">
                                 <option value="select">
                                     Select a gender...
                                 </option>
@@ -103,7 +102,7 @@
                                 </option>
                             </select>
                         </div>
-                        <div id="gendererror">
+                        <div id="gendererror" class="sell-err-msg">
                         </div>
                     </span>
                     <div>
@@ -111,7 +110,7 @@
                     </div>
                     <span class="error">
                         <div>
-                            <select id="category">
+                            <select id="category" class="sellerror">
                                 <option value="select">
                                     Select a category...
                                 </option>
@@ -138,7 +137,7 @@
                                 </option>
                             </select>
                         </div>
-                        <div id="categoryerror">
+                        <div id="categoryerror" class="sell-err-msg">
                         </div>
                     </span>
                     <div>
@@ -146,7 +145,7 @@
                     </div>
                     <span class="error">
                         <div>
-                            <select id="size">
+                            <select id="size" class="sellerror">
                                 <option value="select">
                                     Select a size...
                                 </option>
@@ -173,7 +172,7 @@
                                 </option>
                             </select>
                         </div>
-                        <div id="sizeerror">
+                        <div id="sizeerror" class="sell-err-msg">
                         </div>
                     </span>
                     <div>
@@ -181,7 +180,7 @@
                     </div>
                     <span class="error">
                         <div>
-                            <select id="colour">
+                            <select id="colour" class="sellerror">
                                 <option value="select">
                                     Select a colour...
                                 </option>
@@ -217,11 +216,11 @@
                                 </option>
                             </select>
                         </div>
-                        <div id="colourerror">
+                        <div id="colourerror" class="sell-err-msg">
                         </div>
                     </span>
                     <div>
-                        <input class='formButton' type='submit' value='Create listing' id='create' />
+                        <input id="add" type='submit' class="btn btn-outline-success" value='Create listing' />
                     </div>
                 </fieldset>
             </form>
@@ -231,5 +230,6 @@
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src='./script_sell.js'></script>
 
 </html>
