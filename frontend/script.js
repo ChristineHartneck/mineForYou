@@ -1,9 +1,9 @@
 var items = [{
-    gender: "male",
+    gender: "Male",
     title: "Shirt",
     description: "Nice shirt. 1x worn. by urban outfitters. super soft material.",
-    category: "tops",
-    colour: "brown",
+    category: "Tops",
+    colour: "Brown",
     price: 22.5,
     size: "L",
     uploadedBy: 1,
@@ -11,11 +11,11 @@ var items = [{
     boughtBy: 1,
 },
 {
-    gender: "female",
+    gender: "Female",
     title: "Black Dress",
     description: "Offer here a knitted dress from vero moda. Without belt. Top condition.",
-    category: "dresses",
-    colour: "black",
+    category: "Dresses",
+    colour: "Black",
     price: 25.0,
     size: "S",
     uploadedBy: 1,
@@ -23,10 +23,10 @@ var items = [{
     boughtBy: 1,
 },
 {
-    gender: "female",
-    title: "nice Top",
+    gender: "Female",
+    title: "Nice Top",
     description: "White t-shirt with flamingo print, it was worn only a few times, the size is normal, it fits figure-hugging but not skintight.",
-    category: "tops",
+    category: "Tops",
     colour: "white",
     price: 10.0,
     size: "M",
@@ -35,11 +35,11 @@ var items = [{
     boughtBy: 1,
 },
 {
-    gender: "male",
+    gender: "Male",
     title: "Levi's",
     description: "Well preserved jeans from Armani. Smoke and animal free household. Pockets from the inside have a hole.",
-    category: "trousers",
-    colour: "blue",
+    category: "Trousers",
+    colour: "Blue",
     price: 35.5,
     size: "XL",
     uploadedBy: 1,
@@ -49,33 +49,49 @@ var items = [{
 
 function fillProducts() {
     for (var i = 0; i < items.length; i++) {
-        $("#products").append("<div data-toggle='modal' data-target='#exampleModalCenter" + i + "' class='card' style='width: 25rem; '> <img src='src/bild1.jpg' class='card-img-top' alt='...'> <div class='card-body'> <p style='float:left; width: 50%;'>$ " + items[i].price.toFixed(2) + "</p> <p style='float:left; width: 40%;'>" + items[i].size + "</p> <button class='oi oi-heart' onclick='myfunc(this)'></button>  </div>  </div>")
+        $("#products").append("<div data-toggle='modal' data-target='#exampleModalCenter" + i + "' class='card' style='width: 25rem; '> <img src='src/bild1.jpg' class='card-img-top' alt='...'> <div class='card-body'> <p style='float:left; width: 50%;'>$ " + items[i].price.toFixed(2) + "</p> <p style='float:left; width: 30%;'>" + items[i].size + "</p> <button class='oi oi-heart' onclick='myfunc(this)'></button>  </div>  </div>")
     }
     for (var i = 0; i < items.length; i++) {
-        $("#models").append('  <div class="modal fade" id="exampleModalCenter' + i + '" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
+        $("#models").append(
+            '<div class="modal fade" id="exampleModalCenter' + i + '" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
             '<div class="modal-dialog modal-lg" role="document">' +
             '<div class="modal-content>' +
             '<div class="modal-body">' +
-            '<div class="modal-body row">' +
-            '<div class="col-mb-5">' +
+            '<div class="modal-body">' +
+            '<div class="table">' +
             '<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">' +
             '<div class="carousel-inner" role="listbox">' +
-            '<div class="carousel-item active">' +
-            '<img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/img%20(23).jpg" alt="First slide"> </div>' +
-            '</div>' +
-            '<div class="col-mb-7">' +
-            '<h5 class="modal-title" id="exampleModalCenterTitle">' + items[i].title + '</h5>' +
-            'PRICE' +
-            '<h3 class="modal-price">$ ' + items[i].price.toFixed(2) + '</h3>' +
-            items[i].description +
-            items[i].size +
-            items[i].category +
-            '<button type="button" id="button_1" class="btn btn-outline-success" data-dismiss="modal">Cancel</button>' +
-            '<button type="button" id="button_2"class="btn btn-primary">Buy now</button>' +
+            '<div class="carousel-item">' +
+            '<img class="d-block w-100 modal-img" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/img%20(23).jpg" alt="First slide">' + 
             '</div>' +
             '</div>' +
             '</div>' +
-            '</div>')
+            '</div>' +
+            '<div class="table" id="modal-details">' +
+            '<h2 class="modal-title" id="exampleModalCenterTitle">' + items[i].title + '</h2>' +
+            '<div id="price-wrapper">' +
+            '<h4>'+ 'PRICE' + '</h4>' +
+            '<h1 class="modal-price">$ ' + items[i].price.toFixed(2) + '</h1>' +
+            '</div>' +
+            items[i].description + '<br>' +
+            'Size: ' +
+            items[i].gender + '<br>' +
+            'Gender: ' +
+            items[i].size + '<br>' +
+            'Category: ' + 
+            items[i].category + '<br>' +
+            'Colour: ' +
+            items[i].colour + '<br>' +
+            '<div id="buttons-modal">' + 
+            '<button type="button" id="btn-cancel" class="btn btn-outline-success btn-modal" data-dismiss="modal">Cancel</button>' +
+            '<button type="button" id="btn-buy" class="btn btn-primary btn-modal" data-dismiss="modal" onclick="thanks()">Buy now</button>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>');
     }
 }
 fillProducts();
@@ -96,33 +112,49 @@ $('#filt-bt').on('click', function (event) {
         }
     }
     for (var i = 0; i < items.length; i++) {
-        $("#products").append("<div data-toggle='modal' data-target='#exampleModalCenter" + i + "' class='card' style='width: 25rem; '> <img src='src/bild1.jpg' class='card-img-top' alt='...'> <div class='card-body'> <p style='float:left; width: 50%;'>$ " + items[i].price.toFixed(2) + "</p> <p style='float:left; width: 40%;'>" + items[i].size + "</p> <button class='oi oi-heart' onclick='myfunc(this)'></button>  </div>  </div>")
+        $("#products").append("<div data-toggle='modal' data-target='#exampleModalCenter" + i + "' class='card' style='width: 25rem; '> <img src='src/bild1.jpg' class='card-img-top' alt='...'> <div class='card-body'> <p style='float:left; width: 50%;'>$ " + items[i].price.toFixed(2) + "</p> <p style='float:left; width: 30%;'>" + items[i].size + "</p> <button class='oi oi-heart' onclick='myfunc(this)'></button>  </div>  </div>")
     }
     for (var i = 0; i < items.length; i++) {
-        $("#models").append('  <div class="modal fade" id="exampleModalCenter' + i + '" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
+        $("#models").append(
+            '<div class="modal fade" id="exampleModalCenter' + i + '" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
             '<div class="modal-dialog modal-lg" role="document">' +
             '<div class="modal-content>' +
             '<div class="modal-body">' +
-            '<div class="modal-body row">' +
-            '<div class="col-mb-5">' +
+            '<div class="modal-body">' +
+            '<div class="table">' +
             '<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">' +
             '<div class="carousel-inner" role="listbox">' +
-            '<div class="carousel-item active">' +
-            '<img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/img%20(23).jpg" alt="First slide"> </div>' +
-            '</div>' +
-            '<div class="col-mb-7">' +
-            '<h5 class="modal-title" id="exampleModalCenterTitle">' + items[i].title + '</h5>' +
-            'PRICE' +
-            '<h3 class="modal-price">$ ' + items[i].price.toFixed(2) + '</h3>' +
-            items[i].description +
-            items[i].size +
-            items[i].category +
-            '<button type="button" id="button_1" class="btn btn-outline-success" data-dismiss="modal">Cancel</button>' +
-            '<button type="button" id="button_2"class="btn btn-primary">Buy now</button>' +
+            '<div class="carousel-item">' +
+            '<img class="d-block w-100 modal-img" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/img%20(23).jpg" alt="First slide">' + 
             '</div>' +
             '</div>' +
             '</div>' +
-            '</div>')
+            '</div>' +
+            '<div class="table" id="modal-details">' +
+            '<h2 class="modal-title" id="exampleModalCenterTitle">' + items[i].title + '</h2>' +
+            '<div id="price-wrapper">' +
+            '<h4>'+ 'PRICE' + '</h4>' +
+            '<h1 class="modal-price">$ ' + items[i].price.toFixed(2) + '</h1>' +
+            '</div>' +
+            items[i].description + '<br>' +
+            'Size: ' +
+            items[i].gender + '<br>' +
+            'Gender: ' +
+            items[i].size + '<br>' +
+            'Category: ' + 
+            items[i].category + '<br>' +
+            'Colour: ' +
+            items[i].colour + '<br>' +
+            '<div id="buttons-modal">' + 
+            '<button type="button" id="btn-cancel" class="btn btn-outline-success btn-modal" data-dismiss="modal">Cancel</button>' +
+            '<button type="button" id="btn-buy" class="btn btn-primary btn-modal" data-dismiss="modal" onclick="thanks()">Buy now</button>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>');
     }
 })
 
@@ -137,36 +169,60 @@ $('#srch-bt').on('click', function (event) {
     }
     $('#srch-fld').val('');
     for (var i = 0; i < items.length; i++) {
-        $("#products").append("<div data-toggle='modal' data-target='#exampleModalCenter" + i + "' class='card' style='width: 25rem; '> <img src='src/bild1.jpg' class='card-img-top' alt='...'> <div class='card-body'> <p style='float:left; width: 50%;'>$ " + items[i].price.toFixed(2) + "</p> <p style='float:left; width: 40%;'>" + items[i].size + "</p> <button class='oi oi-heart' onclick='myfunc(this)'></button>  </div>  </div>")
+        $("#products").append("<div data-toggle='modal' data-target='#exampleModalCenter" + i + "' class='card' style='width: 25rem; '> <img src='src/bild1.jpg' class='card-img-top' alt='...'> <div class='card-body'> <p style='float:left; width: 50%;'>$ " + items[i].price.toFixed(2) + "</p> <p style='float:left; width: 30%;'>" + items[i].size + "</p> <button class='oi oi-heart' onclick='myfunc(this)'></button>  </div>  </div>")
     }
     for (var i = 0; i < items.length; i++) {
-        $("#models").append('  <div class="modal fade" id="exampleModalCenter' + i + '" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
+        $("#models").append(
+            '<div class="modal fade" id="exampleModalCenter' + i + '" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
             '<div class="modal-dialog modal-lg" role="document">' +
             '<div class="modal-content>' +
             '<div class="modal-body">' +
-            '<div class="modal-body row">' +
-            '<div class="col-mb-5">' +
+            '<div class="modal-body">' +
+            '<div class="table">' +
             '<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">' +
             '<div class="carousel-inner" role="listbox">' +
-            '<div class="carousel-item active">' +
-            '<img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/img%20(23).jpg" alt="First slide"> </div>' +
-            '</div>' +
-            '<div class="col-mb-7">' +
-            '<h5 class="modal-title" id="exampleModalCenterTitle">' + items[i].title + '</h5>' +
-            'PRICE' +
-            '<h3 class="modal-price">$ ' + items[i].price.toFixed(2) + '</h3>' +
-            items[i].description +
-            items[i].size +
-            items[i].category +
-            '<button type="button" id="button_1" class="btn btn-outline-success" data-dismiss="modal">Cancel</button>' +
-            '<button type="button" id="button_2"class="btn btn-primary">Buy now</button>' +
+            '<div class="carousel-item">' +
+            '<img class="d-block w-100 modal-img" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/img%20(23).jpg" alt="First slide">' + 
             '</div>' +
             '</div>' +
             '</div>' +
-            '</div>')
+            '</div>' +
+            '<div class="table" id="modal-details">' +
+            '<h2 class="modal-title" id="exampleModalCenterTitle">' + items[i].title + '</h2>' +
+            '<div id="price-wrapper">' +
+            '<h4>'+ 'PRICE' + '</h4>' +
+            '<h1 class="modal-price">$ ' + items[i].price.toFixed(2) + '</h1>' +
+            '</div>' +
+            items[i].description + '<br>' +
+            'Size: ' +
+            items[i].gender + '<br>' +
+            'Gender: ' +
+            items[i].size + '<br>' +
+            'Category: ' + 
+            items[i].category + '<br>' +
+            'Colour: ' +
+            items[i].colour + '<br>' +
+            '<div id="buttons-modal">' + 
+            '<button type="button" id="btn-cancel" class="btn btn-outline-success btn-modal" data-dismiss="modal">Cancel</button>' +
+            '<button type="button" id="btn-buy" class="btn btn-primary btn-modal" data-dismiss="modal" onclick="thanks()">Buy now</button>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>');
     }
 })
 
 function myfunc(elmnt) {
     $(elmnt).attr('class', 'oi oi-check');
+}
+function thanks() {
+    console.log("test thanks");
+    console.log($('#thanks'));
+    $('#thanks').css("display", "flex");
+}
+function finishBuying() {
+    $('#thanks').css("display", "none");
 }

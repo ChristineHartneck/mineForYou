@@ -159,6 +159,44 @@ nav {
     flex-direction: column;
 }
 
+/*personal.html*/
+
+.container-personal {
+    margin-left: 40px;
+}
+h3{
+    color: #3E4551;
+}
+li{
+    color: #3E4551;
+}
+#producthistory {
+    margin-left: 40px;
+    color: #3E4551;
+}
+
+.list-group-item{
+    list-style: none;
+    border-style: none;
+}
+#about{
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    border-top: 1px solid lightgrey;
+    text-align: center;
+}
+#emails{
+    display: flex;
+    flex-direction: column;
+}
+footer{
+    position: absolute;
+    bottom: 0px;
+    color: #3E4551;
+
+}
+
 /* login.html*/
 .login-logo{
     margin-bottom: 30px;
@@ -307,7 +345,7 @@ nav {
     height: 30%;
     background-color: white;
     border-radius: 4px;
-    color: black;
+    color: #3E4551;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -319,7 +357,7 @@ nav {
     color: #27ccc0;
     background-color: white;
     border: 2px solid #27ccc0;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 #thanks-btn:hover {
     color: white;
