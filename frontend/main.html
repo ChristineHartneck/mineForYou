@@ -56,8 +56,8 @@
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dLabel">
-                            <li class="li-filter" onclick="filterItem(this, parent)"> Male </li>
-                            <li class="li-filter li-last" onclick="filterItem(this)"> Female </li>
+                            <li class="li-filter" onclick="filterItem(this, parent, 'gender')"> Male </li>
+                            <li class="li-filter li-last" onclick="filterItem(this, 'gender')"> Female </li>
                         </ul>
                     </div>
                     <div class="dropdown">
@@ -67,12 +67,12 @@
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dLabel">
-                                <li class="li-filter" onclick="filterItem(this)"> Tops </li>
-                                <li class="li-filter" onclick="filterItem(this)"> Trousers </li>
-                                <li class="li-filter" onclick="filterItem(this)"> Shorts </li>
-                                <li class="li-filter" onclick="filterItem(this)"> Skirts </li>
-                                <li class="li-filter" onclick="filterItem(this)"> Dresses </li>
-                                <li class="li-filter" onclick="filterItem(this)"> Jumpers </li>
+                                <li class="li-filter" onclick="filterItem(this, 'cat')"> Tops </li>
+                                <li class="li-filter" onclick="filterItem(this, 'cat')"> Trousers </li>
+                                <li class="li-filter" onclick="filterItem(this, 'cat')"> Shorts </li>
+                                <li class="li-filter" onclick="filterItem(this, 'cat')"> Skirts </li>
+                                <li class="li-filter" onclick="filterItem(this, 'cat')"> Dresses </li>
+                                <li class="li-filter" onclick="filterItem(this, 'cat')"> Jumpers </li>
                                 <li class="li-filter li-last" onclick="filterItem(this)"> Coats </li>
                             </ul>
                         </div>
@@ -83,13 +83,13 @@
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dLabel">
-                                    <li class="li-filter" onclick="filterItem(this)"> XXS </li>
-                                    <li class="li-filter" onclick="filterItem(this)"> XS </li>
-                                    <li class="li-filter" onclick="filterItem(this)"> S </li>
-                                    <li class="li-filter" onclick="filterItem(this)"> M </li>
-                                    <li class="li-filter" onclick="filterItem(this)"> L </li>
-                                    <li class="li-filter" onclick="filterItem(this)"> XL </li>
-                                    <li class="li-filter li-last" onclick="filterItem(this)"> XXL </li>
+                                    <li class="li-filter" onclick="filterItem(this, 'size')"> XXS </li>
+                                    <li class="li-filter" onclick="filterItem(this, 'size')"> XS </li>
+                                    <li class="li-filter" onclick="filterItem(this, 'size')"> S </li>
+                                    <li class="li-filter" onclick="filterItem(this, 'size')"> M </li>
+                                    <li class="li-filter" onclick="filterItem(this, 'size')"> L </li>
+                                    <li class="li-filter" onclick="filterItem(this, 'size')"> XL </li>
+                                    <li class="li-filter li-last" onclick="filterItem(this, 'size')"> XXL </li>
                                 </ul>
                             </div>
                             <div class="dropdown">
@@ -99,15 +99,16 @@
                                         <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dLabel">
-                                        <li class="li-filter" onclick="filterItem(this)"> Red </li>
-                                        <li class="li-filter" onclick="filterItem(this)"> Orange </li>
-                                        <li class="li-filter" onclick="filterItem(this)"> Yellow </li>
-                                        <li class="li-filter" onclick="filterItem(this)"> Green </li>
-                                        <li class="li-filter" onclick="filterItem(this)"> Blue </li>
-                                        <li class="li-filter" onclick="filterItem(this)"> Purple </li>
-                                        <li class="li-filter" onclick="filterItem(this)"> White </li>
-                                        <li class="li-filter" onclick="filterItem(this)"> Black </li>
-                                        <li class="li-filter li-last" onclick="filterItem(this)"> Multicoloured </li>
+                                        <li class="li-filter" onclick="filterItem(this, 'color')"> Red </li>
+                                        <li class="li-filter" onclick="filterItem(this, 'color')"> Orange </li>
+                                        <li class="li-filter" onclick="filterItem(this, 'color')"> Yellow </li>
+                                        <li class="li-filter" onclick="filterItem(this, 'color')"> Green </li>
+                                        <li class="li-filter" onclick="filterItem(this, 'color')"> Blue </li>
+                                        <li class="li-filter" onclick="filterItem(this, 'color')"> Purple </li>
+                                        <li class="li-filter" onclick="filterItem(this, 'color')"> White </li>
+                                        <li class="li-filter" onclick="filterItem(this, 'color')"> Black </li>
+                                        <li class="li-filter" onclick="filterItem(this, 'color')"> Brown </li>
+                                        <li class="li-filter li-last" onclick="filterItem(this, 'color')"> Multicoloured </li>
                                     </ul>
                                 </div>
            <!--
@@ -230,6 +231,13 @@
     <div id=cards>
         <section id="products"></section>
         <section id="models"></section>
+        <section id="thanks">
+            <div id="thanks-wrapper">
+                <h3> <span class='oi oi-heart'></span></h3> 
+                <h3> Thanks for buying </h3> 
+                <button class="btn" id="thanks-btn" type="submit" onclick="finishBuying()">close</button>
+            </div>
+        </section>
     </div>
 
 </body>

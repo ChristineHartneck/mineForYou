@@ -1,4 +1,4 @@
-var items = [{
+var products = [{
     gender: "Male",
     title: "Shirt",
     description: "Nice shirt. 1x worn. by urban outfitters. super soft material.",
@@ -47,7 +47,9 @@ var items = [{
     boughtBy: 1,
 }]
 
-function fillProducts() {
+function fillProducts(items) {
+    console.log("fill products");
+    console.log(items);
     for (var i = 0; i < items.length; i++) {
         $("#products").append("<div data-toggle='modal' data-target='#exampleModalCenter" + i + "' class='card' style='width: 25rem; '> <img src='src/bild1.jpg' class='card-img-top' alt='...'> <div class='card-body'> <p style='float:left; width: 50%;'>$ " + items[i].price.toFixed(2) + "</p> <p style='float:left; width: 30%;'>" + items[i].size + "</p> <button class='oi oi-heart' onclick='myfunc(this)'></button>  </div>  </div>")
     }
@@ -92,24 +94,52 @@ function fillProducts() {
             '</div>');
     }
 }
-fillProducts();
+fillProducts(products);
+
+var filterGender = 'none';
+var filterSize = 'none';
+var filterColor = 'none';
+var filterCat = 'none';
 
 // dropdown color right
-function filterItem(data) {
+function filterItem(data, filter) {
     console.log(data);
     console.log(data.parentElement.parentElement.children[0]);
     var getValue = data.innerHTML;
     data.parentElement.parentElement.children[0].innerHTML = getValue;
+    switch (filter) {
+        case 'gender': 
+            filterGender = getValue;
+            break;
+        case 'cat': 
+            filterCat = getValue;
+            break;
+        case 'size': 
+            filterSize = getValue;
+            break;
+        case 'color': 
+            filterColor = getValue;
+            break;
+        default: 
+            console.log('default filter');
+    }
+    console.log("size: " + filterSize);
+    console.log("gender: " + filterGender);
+    console.log("color: " + filterColor);
+    console.log("cat: " + filterCat);
     //$('.dropdown-select').text(getValue);
 }
+/*
 $('.dropdown-menu li').on('click', function () {
     console.log(this);
     var getValue = $(this).text();
     $('.dropdown-select').text(getValue);
     console.log("dropdown: " + getValue);
-});
+}); */
   
 function thanks() {
+    console.log("test thanks");
+    console.log($('#thanks'));
     $('#thanks').css("display", "flex");
 }
 function finishBuying() {
@@ -118,10 +148,12 @@ function finishBuying() {
 
 
 $('#filt-bt').on('click', function (event) {
+    var items = [];
     event.preventDefault();
     $('#products').empty();
     $('#models').empty();
-    for (i = items.length - 1; i >= 0; --i) {
+    for (i = products.length - 1; i >= 0; --i) {
+        /*
         if ($('#gender').val() != items[i].gender && $('#gender').val() != 'select') {
             items.splice(i, 1);
         } else if ($('#category').val() != items[i].category && $('#category').val() != 'select') {
@@ -131,10 +163,23 @@ $('#filt-bt').on('click', function (event) {
         } else if ($('#colour').val() != items[i].colour && $('#colour').val() != 'select') {
             items.splice(i, 1);
         }
+        */
+        if (filterSize != 'none') {
+            console.log(products[i].size + " " + filterSize);
+            console.log(products[i].size == filterSize);
+            if (products[i].size.toString() == filterSize.toString()) {
+                console.log(items.includes(products[i]));
+                if (!items.includes(products[i])) {
+                    items.push(products[i])
+                    console.log(items);
+                }
+            }
+        }
     }
-    for (var i = 0; i < items.length; i++) {
+    fillProducts(items);
+    /*for (var i = 0; i < items.length; i++) {
         $("#products").append("<div data-toggle='modal' data-target='#exampleModalCenter" + i + "' class='card' style='width: 25rem; '> <img src='src/bild1.jpg' class='card-img-top' alt='...'> <div class='card-body'> <p style='float:left; width: 50%;'>$ " + items[i].price.toFixed(2) + "</p> <p style='float:left; width: 35%;'>" + items[i].size + "</p> <button class='oi oi-heart' onclick='myfunc(this)'></button>  </div>  </div>")
-    }
+    }*/
     for (var i = 0; i < items.length; i++) {
         $("#models").append('  <div class="modal fade" id="exampleModalCenter' + i + '" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
             '<div class="modal-dialog modal-lg" role="document">' +
@@ -160,7 +205,7 @@ $('#filt-bt').on('click', function (event) {
             'Colour: ' +
             items[i].colour + '<br>' +
             '<button type="button" id="button_1" class="btn btn-outline-success" data-dismiss="modal">Cancel</button>' +
-            '<button type="button" id="button_2"class="btn btn-primary">Buy now</button>' +
+            '<button type="button" id="button_2" class="btn btn-primary" data-dismiss="modal" onclick="thanks()">Buy now</button>' +
             '</div>' +
             '</div>' +
             '</div>' +
