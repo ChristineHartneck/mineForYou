@@ -130,31 +130,10 @@ nav {
 #filt-bt{
     margin-right: 5px;
 }
-
-/*personal.html*/
-
-.container-personal {
-    margin-left: 40px;
-}
-h3{
-    color: #3E4551;
-}
-li{
-    color: #3E4551;
-}
-#producthistory {
-    margin-left: 40px;
-    color: #3E4551;
-}
-
-.list-group-item{
+#details{
     list-style: none;
-    border-style: none;
 }
 #about{
-    display: flex;
-    flex-direction: column;
-    margin-left: 40px;
     border-top: 1px solid lightgrey;
     text-align: center;
 }
@@ -162,19 +141,20 @@ li{
     display: flex;
     flex-direction: column;
 }
-footer{
-    position: absolute;
-    bottom: 0px;
-    color: #3E4551;
-
+#listing{
+    padding-left: 10px;
 }
-
-/* login.html*/
-
-.main-login{
-    margin-left: 40px;
+#create{
+    margin: 10px;
+    background-color: white; 
+    color: #27ccc0;
+    border: 2px solid #27ccc0;
 }
-.container-login{
+#create:hover{
+    background-color: #27ccc0;
+    color: white;
+}
+.container{
     display: flex;
     flex-direction: column;
 }
@@ -221,13 +201,6 @@ footer{
 .login-logo{
     margin-bottom: 30px;
 }
-h3{
-    color: #3E4551;
-}
-label{
-    color: #3E4551;
-}
-
 .login-error{
     padding-left: 15px;
     color: red;
@@ -235,29 +208,26 @@ label{
 .form-group{
     margin-bottom: 0;
 }
-#login-bn{
+#Login{
     margin: 10px;
     background-color: white; 
     color: #27ccc0;
     border: 2px solid #27ccc0;
 }
-#login-bn:hover{
+#Login:hover{
     background-color: #27ccc0;
     color: white;
 }
-#sign-up-bn{
+#Sign-up{
     margin: 10px;
     background-color: white; 
     color: #27ccc0;
     border: 2px solid #27ccc0;
 }
-#sign-up-bn:hover{
+#Sign-up:hover{
     background-color: #27ccc0;
     color: white;
 }
-
-/*main.html*/ 
-
 .form-inline > button{
     background-color: white; 
     color: #27ccc0;
@@ -306,7 +276,6 @@ label{
     align-items: center;
     flex-wrap: wrap;
 }
-
 .modal-dialog{
     width: 60%;
     background-color: white;

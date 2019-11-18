@@ -47,9 +47,7 @@ var items = [{
     boughtBy: 1,
 }]
 
-function fillProducts(items) {
-    console.log("fill products");
-    console.log(items);
+function fillProducts() {
     for (var i = 0; i < items.length; i++) {
         $("#products").append("<div data-toggle='modal' data-target='#exampleModalCenter" + i + "' class='card' style='width: 25rem; '> <img src='src/bild1.jpg' class='card-img-top' alt='...'> <div class='card-body'> <p style='float:left; width: 50%;'>$ " + items[i].price.toFixed(2) + "</p> <p style='float:left; width: 30%;'>" + items[i].size + "</p> <button class='oi oi-heart' onclick='myfunc(this)'></button>  </div>  </div>")
     }
@@ -95,37 +93,14 @@ function fillProducts(items) {
             '</div>' +
             '</div>');
     }
-    console.log("size: " + filterSize);
-    console.log("gender: " + filterGender);
-    console.log("color: " + filterColor);
-    console.log("cat: " + filterCat);
-    //$('.dropdown-select').text(getValue);
 }
-/*
-$('.dropdown-menu li').on('click', function () {
-    console.log(this);
-    var getValue = $(this).text();
-    $('.dropdown-select').text(getValue);
-    console.log("dropdown: " + getValue);
-}); */
-  
-function thanks() {
-    console.log("test thanks");
-    console.log($('#thanks'));
-    $('#thanks').css("display", "flex");
-}
-function finishBuying() {
-    $('#thanks').css("display", "none");
-}
-
+fillProducts();
 
 $('#filt-bt').on('click', function (event) {
-    var items = [];
     event.preventDefault();
     $('#products').empty();
     $('#models').empty();
-    for (i = products.length - 1; i >= 0; --i) {
-        /*
+    for (i = items.length - 1; i >= 0; --i) {
         if ($('#gender').val() != items[i].gender && $('#gender').val() != 'select') {
             items.splice(i, 1);
         } else if ($('#category').val() != items[i].category && $('#category').val() != 'select') {
@@ -134,18 +109,6 @@ $('#filt-bt').on('click', function (event) {
             items.splice(i, 1);
         } else if ($('#colour').val() != items[i].colour && $('#colour').val() != 'select') {
             items.splice(i, 1);
-        }
-        */
-        if (filterSize != 'none') {
-            console.log(products[i].size + " " + filterSize);
-            console.log(products[i].size == filterSize);
-            if (products[i].size.toString() == filterSize.toString()) {
-                console.log(items.includes(products[i]));
-                if (!items.includes(products[i])) {
-                    items.push(products[i])
-                    console.log(items);
-                }
-            }
         }
     }
     for (var i = 0; i < items.length; i++) {

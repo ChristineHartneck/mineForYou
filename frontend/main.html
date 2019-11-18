@@ -12,10 +12,10 @@
 </head>
 
 <body>
+    <a class="navbar-brand" href="#">
+        <img id="logo-img" alt="Titel" src="src/mineForYou.png">
+    </a>
     <nav id="menu-wrapper">
-        <a class="navbar-brand" href="#">
-                <img id="logo-img" alt="Titel" src="src/mineForYou.png">
-            </a>
         <ul class="nav">
 
             <li class="nav-item">
@@ -35,84 +35,10 @@
                 <a class="nav-link" href="login.html">Logout</a>
             </li>
         </ul>
-        <section id="search">
-            <div>
-                 <form class="form-inline" action="/action_page.php">
-                    <div class="input-wrapper">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                        <span class="input-span"></span>
-                    </div>
-                    <button class="btn btn-outline-success" id="search-btn" type="submit">Search</button>
-                 </form>
-            </div>
-        </section>
     </nav>
     <div id="main-page">
-            <section id="filter">
-                    <div class="dropdown">
-                        <button id="dLabel" class="dropdown-select" type="button" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            Select a gender
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dLabel">
-                            <li class="li-filter" onclick="filterItem(this, parent, 'gender')"> Male </li>
-                            <li class="li-filter li-last" onclick="filterItem(this, 'gender')"> Female </li>
-                        </ul>
-                    </div>
-                    <div class="dropdown">
-                            <button id="dLabel" class="dropdown-select" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                Select  a category
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dLabel">
-                                <li class="li-filter" onclick="filterItem(this, 'cat')"> Tops </li>
-                                <li class="li-filter" onclick="filterItem(this, 'cat')"> Trousers </li>
-                                <li class="li-filter" onclick="filterItem(this, 'cat')"> Shorts </li>
-                                <li class="li-filter" onclick="filterItem(this, 'cat')"> Skirts </li>
-                                <li class="li-filter" onclick="filterItem(this, 'cat')"> Dresses </li>
-                                <li class="li-filter" onclick="filterItem(this, 'cat')"> Jumpers </li>
-                                <li class="li-filter li-last" onclick="filterItem(this)"> Coats </li>
-                            </ul>
-                        </div>
-                        <div class="dropdown">
-                                <button id="dLabel" class="dropdown-select" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
-                                    Select  a size
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dLabel">
-                                    <li class="li-filter" onclick="filterItem(this, 'size')"> XXS </li>
-                                    <li class="li-filter" onclick="filterItem(this, 'size')"> XS </li>
-                                    <li class="li-filter" onclick="filterItem(this, 'size')"> S </li>
-                                    <li class="li-filter" onclick="filterItem(this, 'size')"> M </li>
-                                    <li class="li-filter" onclick="filterItem(this, 'size')"> L </li>
-                                    <li class="li-filter" onclick="filterItem(this, 'size')"> XL </li>
-                                    <li class="li-filter li-last" onclick="filterItem(this, 'size')"> XXL </li>
-                                </ul>
-                            </div>
-                            <div class="dropdown">
-                                    <button id="dLabel" class="dropdown-select" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                        Select  a colour
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dLabel">
-                                        <li class="li-filter" onclick="filterItem(this, 'color')"> Red </li>
-                                        <li class="li-filter" onclick="filterItem(this, 'color')"> Orange </li>
-                                        <li class="li-filter" onclick="filterItem(this, 'color')"> Yellow </li>
-                                        <li class="li-filter" onclick="filterItem(this, 'color')"> Green </li>
-                                        <li class="li-filter" onclick="filterItem(this, 'color')"> Blue </li>
-                                        <li class="li-filter" onclick="filterItem(this, 'color')"> Purple </li>
-                                        <li class="li-filter" onclick="filterItem(this, 'color')"> White </li>
-                                        <li class="li-filter" onclick="filterItem(this, 'color')"> Black </li>
-                                        <li class="li-filter" onclick="filterItem(this, 'color')"> Brown </li>
-                                        <li class="li-filter li-last" onclick="filterItem(this, 'color')"> Multicoloured </li>
-                                    </ul>
-                                </div>
-           <!--
-                    <div class="filts">
+        <section id="filter">
+            <div class="filts">
                 <select id="gender" class="sel-filts">
                     <option value="select" id="sel-item">
                         Select a gender...
@@ -219,27 +145,28 @@
                 </select>
             </div>
         </section>
-        -->
         <div>
             <form class="form-inline" action="/action_page.php">
                 <button class="btn btn-outline-success" id="filt-bt" type="submit">Filter</button>
             </form>
         </div>
         </section>
-    
+        <section id="search">
+            <div>
+                <form class="form-inline" action="/action_page.php">
+                    <input class="form-control mr-sm-2" id="srch-fld" type="text" placeholder="Search">
+                    <button class="btn btn-outline-success" id="srch-bt" type="submit">Search</button>
+                </form>
+            </div>
+        </section>
     </div>
     <div id=cards>
         <section id="products"></section>
         <section id="models"></section>
         <section id="thanks">
             <div id="thanks-wrapper">
-<<<<<<< HEAD
-                <h3> <span class='oi oi-heart'></span></h3> 
-                <h3> Thanks for buying </h3> 
-=======
                 <h3> <span class='oi oi-heart'></span></h3>
                 <h3> Thanks for buying </h3>
->>>>>>> acaeac4298b5a8e27e535938b89c6fcf85ebcafe
                 <button class="btn" id="thanks-btn" type="submit" onclick="finishBuying()">close</button>
             </div>
         </section>
