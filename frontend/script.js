@@ -1,4 +1,4 @@
-var products = [{
+var items = [{
     gender: "Male",
     title: "Shirt",
     description: "Nice shirt. 1x worn. by urban outfitters. super soft material.",
@@ -27,7 +27,7 @@ var products = [{
     title: "Nice Top",
     description: "White t-shirt with flamingo print, it was worn only a few times, the size is normal, it fits figure-hugging but not skintight.",
     category: "Tops",
-    colour: "White",
+    colour: "white",
     price: 10.0,
     size: "M",
     uploadedBy: 1,
@@ -75,15 +75,17 @@ function fillProducts(items) {
             '<h4>'+ 'PRICE' + '</h4>' +
             '<h1 class="modal-price">$ ' + items[i].price.toFixed(2) + '</h1>' +
             '</div>' +
-            items[i].description + '<br>' + '<br>' +
+            items[i].description + '<br>' +
             'Size: ' +
-            items[i].size + '<br>' + '<br>' +
+            items[i].gender + '<br>' +
+            'Gender: ' +
+            items[i].size + '<br>' +
             'Category: ' + 
             items[i].category + '<br>' +
             'Colour: ' +
             items[i].colour + '<br>' +
             '<div id="buttons-modal">' + 
-            '<button type="button" id="btn-cancel" class="btn btn-outline-success btn-modal" data-dismiss="modal">Cancle</button>' +
+            '<button type="button" id="btn-cancel" class="btn btn-outline-success btn-modal" data-dismiss="modal">Cancel</button>' +
             '<button type="button" id="btn-buy" class="btn btn-primary btn-modal" data-dismiss="modal" onclick="thanks()">Buy now</button>' +
             '</div>' +
             '</div>' +
@@ -92,36 +94,6 @@ function fillProducts(items) {
             '</div>' +
             '</div>' +
             '</div>');
-    }
-}
-fillProducts(products);
-
-var filterGender = 'none';
-var filterSize = 'none';
-var filterColor = 'none';
-var filterCat = 'none';
-
-// dropdown color right
-function filterItem(data, filter) {
-    console.log(data);
-    console.log(data.parentElement.parentElement.children[0]);
-    var getValue = data.innerHTML;
-    data.parentElement.parentElement.children[0].innerHTML = getValue;
-    switch (filter) {
-        case 'gender': 
-            filterGender = getValue;
-            break;
-        case 'cat': 
-            filterCat = getValue;
-            break;
-        case 'size': 
-            filterSize = getValue;
-            break;
-        case 'color': 
-            filterColor = getValue;
-            break;
-        default: 
-            console.log('default filter');
     }
     console.log("size: " + filterSize);
     console.log("gender: " + filterGender);
@@ -176,40 +148,50 @@ $('#filt-bt').on('click', function (event) {
             }
         }
     }
-    fillProducts(items);
-    /*for (var i = 0; i < items.length; i++) {
-        $("#products").append("<div data-toggle='modal' data-target='#exampleModalCenter" + i + "' class='card' style='width: 25rem; '> <img src='src/bild1.jpg' class='card-img-top' alt='...'> <div class='card-body'> <p style='float:left; width: 50%;'>$ " + items[i].price.toFixed(2) + "</p> <p style='float:left; width: 35%;'>" + items[i].size + "</p> <button class='oi oi-heart' onclick='myfunc(this)'></button>  </div>  </div>")
-    }*/
     for (var i = 0; i < items.length; i++) {
-        $("#models").append('  <div class="modal fade" id="exampleModalCenter' + i + '" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
+        $("#products").append("<div data-toggle='modal' data-target='#exampleModalCenter" + i + "' class='card' style='width: 25rem; '> <img src='src/bild1.jpg' class='card-img-top' alt='...'> <div class='card-body'> <p style='float:left; width: 50%;'>$ " + items[i].price.toFixed(2) + "</p> <p style='float:left; width: 30%;'>" + items[i].size + "</p> <button class='oi oi-heart' onclick='myfunc(this)'></button>  </div>  </div>")
+    }
+    for (var i = 0; i < items.length; i++) {
+        $("#models").append(
+            '<div class="modal fade" id="exampleModalCenter' + i + '" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
             '<div class="modal-dialog modal-lg" role="document">' +
             '<div class="modal-content>' +
             '<div class="modal-body">' +
-            '<div class="modal-body row">' +
-            '<div class="col-mb-5">' +
+            '<div class="modal-body">' +
+            '<div class="table">' +
             '<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">' +
             '<div class="carousel-inner" role="listbox">' +
-            '<div class="carousel-item active">' +
-            '<img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/img%20(23).jpg" alt="First slide"> </div>' +
+            '<div class="carousel-item">' +
+            '<img class="d-block w-100 modal-img" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/img%20(23).jpg" alt="First slide">' + 
             '</div>' +
-            '<div class="col-mb-7">' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '<div class="table" id="modal-details">' +
             '<h2 class="modal-title" id="exampleModalCenterTitle">' + items[i].title + '</h2>' +
             '<div id="price-wrapper">' +
             '<h4>'+ 'PRICE' + '</h4>' +
             '<h1 class="modal-price">$ ' + items[i].price.toFixed(2) + '</h1>' +
-            items[i].description + '<br>' + '<br>' +
+            '</div>' +
+            items[i].description + '<br>' +
             'Size: ' +
-            items[i].size + '<br>' + '<br>' +
+            items[i].gender + '<br>' +
+            'Gender: ' +
+            items[i].size + '<br>' +
             'Category: ' + 
             items[i].category + '<br>' +
             'Colour: ' +
             items[i].colour + '<br>' +
-            '<button type="button" id="button_1" class="btn btn-outline-success" data-dismiss="modal">Cancel</button>' +
-            '<button type="button" id="button_2" class="btn btn-primary" data-dismiss="modal" onclick="thanks()">Buy now</button>' +
+            '<div id="buttons-modal">' + 
+            '<button type="button" id="btn-cancel" class="btn btn-outline-success btn-modal" data-dismiss="modal">Cancel</button>' +
+            '<button type="button" id="btn-buy" class="btn btn-primary btn-modal" data-dismiss="modal" onclick="thanks()">Buy now</button>' +
             '</div>' +
             '</div>' +
             '</div>' +
-            '</div>')
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>');
     }
 })
 
@@ -224,41 +206,60 @@ $('#srch-bt').on('click', function (event) {
     }
     $('#srch-fld').val('');
     for (var i = 0; i < items.length; i++) {
-        $("#products").append("<div data-toggle='modal' data-target='#exampleModalCenter" + i + "' class='card' style='width: 25rem; '> <img src='src/bild1.jpg' class='card-img-top' alt='...'> <div class='card-body'> <p style='float:left; width: 50%;'>$ " + items[i].price.toFixed(2) + "</p> <p style='float:left; width: 40%;'>" + items[i].size + "</p> <button class='oi oi-heart' onclick='myfunc(this)'></button>  </div>  </div>")
+        $("#products").append("<div data-toggle='modal' data-target='#exampleModalCenter" + i + "' class='card' style='width: 25rem; '> <img src='src/bild1.jpg' class='card-img-top' alt='...'> <div class='card-body'> <p style='float:left; width: 50%;'>$ " + items[i].price.toFixed(2) + "</p> <p style='float:left; width: 30%;'>" + items[i].size + "</p> <button class='oi oi-heart' onclick='myfunc(this)'></button>  </div>  </div>")
     }
     for (var i = 0; i < items.length; i++) {
-        $("#models").append('  <div class="modal fade" id="exampleModalCenter' + i + '" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
+        $("#models").append(
+            '<div class="modal fade" id="exampleModalCenter' + i + '" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
             '<div class="modal-dialog modal-lg" role="document">' +
             '<div class="modal-content>' +
             '<div class="modal-body">' +
-            '<div class="modal-body row">' +
-            '<div class="col-mb-5">' +
+            '<div class="modal-body">' +
+            '<div class="table">' +
             '<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">' +
             '<div class="carousel-inner" role="listbox">' +
-            '<div class="carousel-item active">' +
-            '<img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/img%20(23).jpg" alt="First slide"> </div>' +
+            '<div class="carousel-item">' +
+            '<img class="d-block w-100 modal-img" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/img%20(23).jpg" alt="First slide">' + 
             '</div>' +
-            '<div class="col-mb-7">' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '<div class="table" id="modal-details">' +
             '<h2 class="modal-title" id="exampleModalCenterTitle">' + items[i].title + '</h2>' +
             '<div id="price-wrapper">' +
             '<h4>'+ 'PRICE' + '</h4>' +
             '<h1 class="modal-price">$ ' + items[i].price.toFixed(2) + '</h1>' +
-            items[i].description + '<br>' + '<br>' +
+            '</div>' +
+            items[i].description + '<br>' +
             'Size: ' +
-            items[i].size + '<br>' + '<br>' +
+            items[i].gender + '<br>' +
+            'Gender: ' +
+            items[i].size + '<br>' +
             'Category: ' + 
             items[i].category + '<br>' +
             'Colour: ' +
             items[i].colour + '<br>' +
-            '<button type="button" id="button_1" class="btn btn-outline-success" data-dismiss="modal">Cancel</button>' +
-            '<button type="button" id="button_2"class="btn btn-primary">Buy now</button>' +
+            '<div id="buttons-modal">' + 
+            '<button type="button" id="btn-cancel" class="btn btn-outline-success btn-modal" data-dismiss="modal">Cancel</button>' +
+            '<button type="button" id="btn-buy" class="btn btn-primary btn-modal" data-dismiss="modal" onclick="thanks()">Buy now</button>' +
             '</div>' +
             '</div>' +
             '</div>' +
-            '</div>')
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>');
     }
 })
 
 function myfunc(elmnt) {
     $(elmnt).attr('class', 'oi oi-check');
+}
+function thanks() {
+    console.log("test thanks");
+    console.log($('#thanks'));
+    $('#thanks').css("display", "flex");
+}
+function finishBuying() {
+    $('#thanks').css("display", "none");
 }

@@ -13,7 +13,11 @@ nav {
     margin-bottom: 40px;
     display: flex;
     flex-direction: row;
+<<<<<<< HEAD
     justify-content: space-between;
+=======
+    justify-content: flex-end;
+>>>>>>> acaeac4298b5a8e27e535938b89c6fcf85ebcafe
     align-items: center;
 
 }
@@ -40,6 +44,7 @@ nav {
     justify-content: center;
     background-color: white;
     margin: 0 0 30px 0;
+<<<<<<< HEAD
 }
 
 #dLabel {
@@ -104,6 +109,72 @@ nav {
     padding: 0 15px;
 }
 
+=======
+}
+
+#dLabel {
+    width: 240px;
+    height: 36px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: solid 1px #f3f3f3;
+    text-align: left;
+    color: #3E4551;
+    margin: 3px 5px 0 0;
+}
+.caret {
+    float: right;
+    margin-top: 9px;
+    display: block;
+}
+.dropdown-menu {
+  width: 240px;
+  padding: 0;
+  margin: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.dropdown button:hover, .dropdown button:focus {
+    border: none;
+    outline: 0;
+    background-color: white;
+}
+.dropdown.open button#dLabel {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.23);
+    border: solid 1px #f3f3f3;
+    border-bottom: none;
+}
+.dropdown.open ul {
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.23);
+    border: solid 1px #f3f3f3;
+}
+.dropdown-menu li {
+    line-height: 1.5;
+    color: #3E4551;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 7.5px 15px;
+}
+.dropdown-menu li:hover {
+    background-color: #27ccc0;
+    color: white;
+}
+.li-last:hover {
+    border-radius: 0 0 4px 4px;
+}
+.dropdown-menu.dropdown-menu:hover {
+    background-color: white;
+}
+
+#search {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 15px;
+}
+
+>>>>>>> acaeac4298b5a8e27e535938b89c6fcf85ebcafe
 #filter {
     display: flex;
     flex-direction: row;
@@ -118,6 +189,7 @@ nav {
     border-style: none;
     padding: 7px;
 
+<<<<<<< HEAD
 }
 .option {
     background-color: white;
@@ -126,6 +198,16 @@ nav {
 .option:hover {
     background-color: #27ccc0;
 }
+=======
+}
+.option {
+    background-color: white;
+}
+
+.option:hover {
+    background-color: #27ccc0;
+}
+>>>>>>> acaeac4298b5a8e27e535938b89c6fcf85ebcafe
 
 #filt-bt{
     margin-right: 5px;
@@ -177,6 +259,51 @@ footer{
 .container-login{
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
+=======
+}
+
+/*personal.html*/
+
+.container-personal {
+    margin-left: 40px;
+}
+h3{
+    color: #3E4551;
+}
+li{
+    color: #3E4551;
+}
+#producthistory {
+    margin-left: 40px;
+    color: #3E4551;
+}
+
+.list-group-item{
+    list-style: none;
+    border-style: none;
+}
+#about{
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    border-top: 1px solid lightgrey;
+    text-align: center;
+}
+#emails{
+    display: flex;
+    flex-direction: column;
+}
+footer{
+    position: absolute;
+    bottom: 0px;
+    color: #3E4551;
+
+}
+
+/* login.html*/
+.login-logo{
+>>>>>>> acaeac4298b5a8e27e535938b89c6fcf85ebcafe
     margin-bottom: 30px;
 }
 h3{
@@ -280,12 +407,21 @@ label{
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
+<<<<<<< HEAD
     color: #3E4551;
+=======
+>>>>>>> acaeac4298b5a8e27e535938b89c6fcf85ebcafe
 }
 .modal-price{
     color: #27ccc0;
 }
 
+<<<<<<< HEAD
+=======
+.modal-price{
+    color: #27ccc0;
+}
+>>>>>>> acaeac4298b5a8e27e535938b89c6fcf85ebcafe
 .modal-img {
     height: 100%;
 }
@@ -344,7 +480,11 @@ label{
     color: #27ccc0;
     background-color: white;
     border: 2px solid #27ccc0;
+<<<<<<< HEAD
     margin-top: 50px;
+=======
+    margin-top: 10px;
+>>>>>>> acaeac4298b5a8e27e535938b89c6fcf85ebcafe
 }
 #thanks-btn:hover {
     color: white;
@@ -410,6 +550,7 @@ label{
 .main-sell{
     margin-left: 40px;
 }
+<<<<<<< HEAD
 .container-sell{
     display: flex;
     flex-direction: column;
@@ -424,6 +565,10 @@ label{
 #add{
     margin-top: 20px;
     margin-bottom: 50px;
+=======
+#add{
+    margin-top: 20px;
+>>>>>>> acaeac4298b5a8e27e535938b89c6fcf85ebcafe
     background-color: white; 
     color: #27ccc0;
     border: 2px solid #27ccc0;
@@ -431,4 +576,31 @@ label{
 #add:hover {
     background-color: #27ccc0;
     color: white;
+<<<<<<< HEAD
+=======
+}
+#sell-field{
+    display: flex;
+    flex-direction: column;
+}
+.sellerror{
+    width: 240px;
+    height: 36px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: solid 1px #f3f3f3;
+    text-align: left;
+    color: #3E4551;
+    margin: 3px 5px 0 0;
+}
+.sellerror{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.23);
+    border: solid 1px #f3f3f3;
+    border-bottom: none;
+}
+.sell-err-msg{
+    color: red;
+>>>>>>> acaeac4298b5a8e27e535938b89c6fcf85ebcafe
 }

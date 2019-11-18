@@ -5,140 +5,231 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mine For You</title>
-    <!-- Das neueste kompilierte und minimierte CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/mystyle.css">
     <link rel="stylesheet" href="./css/open-iconic-bootstrap.css">
 </head>
 
 <body>
-        <nav id="menu-wrapper">
-                <a class="navbar-brand" href="#">
-                        <img id="logo-img" alt="Titel" src="src/mineForYou.png">
-                    </a>
-                <ul class="nav">
-        
-                    <li class="nav-item">
-                        <a class="nav-link" href="main.html">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="personal.html">Personal</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="liked.html">Liked</a>
-                    </li>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="sell.html">Sell</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html">Logout</a>
-                    </li>
-                </ul>
-                <section id="search">
-                    <div>
-                         <form class="form-inline" action="/action_page.php">
-                            <div class="input-wrapper">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                                <span class="input-span"></span>
-                            </div>
-                            <button class="btn btn-outline-success" id="search-btn" type="submit">Search</button>
-                         </form>
+    <a class="navbar-brand" href="#">
+        <img id="logo-img" alt="Title" src="src/mineForYou.png">
+    </a>
+    <nav id="menu-wrapper">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="main.html">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="personal.html">Personal</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="liked.html">Liked</a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="sell.html">Sell</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.html">Logout</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <section id="listing">
+            <form>
+                <fieldset id="sell-field">
+                    <legend>
+                        Create a listing
+                    </legend>
+                    <div class="form-group col-md-4">
+                        <label for="picture">Picture url:</label>
                     </div>
-                </section>
-            </nav>
-            <main class="main-sell">
-            <div class="container-sell">
-                    <h3>NEW Product</h3>
-                      <div class="form-group col-md-4">
-                        <label for="usr">Picture URL:</label>
-                        <input type="text" class="form-control" id="usr" name="username">
-                      </div>
-                      <div class="form-group col-md-4">
-                        <label for="pwd">Title:</label>
-                        <input type="password" class="form-control" id="pwd" name="password">
-                      </div>
-                      <div class="form-group col-md-4">
-                            <label for="pwd">Product Price ($):</label>
-                            <input type="password" class="form-control" id="pwd" name="password">
-                          </div>
-                      <div class="form-group col-md-4">
-                        <label for="comment">Description:</label>
-                        <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
-                    </div>
-                    <section id="sell-filter">
-                            <div class="dropdown">
-                                <button id="dLabel" class="dropdown-select" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
-                                    Select a gender
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dLabel">
-                                    <li class="li-filter" onclick="filterItem(this)"> Male </li>
-                                    <li class="li-filter li-last" onclick="filterItem(this)"> Female </li>
-                                </ul>
-                            </div>
-                            <div class="dropdown">
-                                    <button id="dLabel" class="dropdown-select" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                        Select  a category
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dLabel">
-                                        <li class="li-filter" onclick="filterItem(this)"> Tops </li>
-                                        <li class="li-filter" onclick="filterItem(this)"> Trousers </li>
-                                        <li class="li-filter" onclick="filterItem(this)"> Shorts </li>
-                                        <li class="li-filter" onclick="filterItem(this)"> Skirts </li>
-                                        <li class="li-filter" onclick="filterItem(this)"> Dresses </li>
-                                        <li class="li-filter" onclick="filterItem(this)"> Jumpers </li>
-                                        <li class="li-filter li-last" onclick="filterItem(this)"> Coats </li>
-                                    </ul>
-                            </div>
-                            <div class="dropdown">
-                                    <button id="dLabel" class="dropdown-select" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                        Select  a size
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dLabel">
-                                        <li class="li-filter" onclick="filterItem(this)"> XXS </li>
-                                        <li class="li-filter" onclick="filterItem(this)"> XS </li>
-                                        <li class="li-filter" onclick="filterItem(this)"> S </li>
-                                        <li class="li-filter" onclick="filterItem(this)"> M </li>
-                                        <li class="li-filter" onclick="filterItem(this)"> L </li>
-                                        <li class="li-filter" onclick="filterItem(this)"> XL </li>
-                                        <li class="li-filter li-last" onclick="filterItem(this)"> XXL </li>
-                                    </ul>
-                            </div>
-                            <div class="dropdown">
-                                    <button id="dLabel" class="dropdown-select" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                        Select  a colour
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dLabel">
-                                        <li class="li-filter" onclick="filterItem(this)"> Red </li>
-                                        <li class="li-filter" onclick="filterItem(this)"> Orange </li>
-                                        <li class="li-filter" onclick="filterItem(this)"> Yellow </li>
-                                        <li class="li-filter" onclick="filterItem(this)"> Green </li>
-                                        <li class="li-filter" onclick="filterItem(this)"> Blue </li>
-                                        <li class="li-filter" onclick="filterItem(this)"> Purple </li>
-                                        <li class="li-filter" onclick="filterItem(this)"> White </li>
-                                        <li class="li-filter" onclick="filterItem(this)"> Brown </li>
-                                        <li class="li-filter" onclick="filterItem(this)"> Black </li>
-                                        <li class="li-filter li-last" onclick="filterItem(this)"> Multicoloured </li>
-                                    </ul>
-                            </div>
-                            </div>
-                    </section>
+                    <span class="error col-md-4">
+                        <div>
+                            <input type="url" id="picture" class="formElement form-control" />
+                        </div>
+                        <div id="pictureerror" class="sell-err-msg">
+                        </div>
+                    </span>
 
-                      <button id="add" type="submit" class="btn btn-outline-success">Add Product</button>
-                  
-                  
+                    <div class="form-group col-md-4">
+                        <label for="title">Title:</label>
+                    </div>
+                    <span class="error col-md-4">
+                        <div>
+                            <input type="text" id="title" class="formElement form-control" />
+                        </div>
+                        <div id="titleerror" class="sell-err-msg">
+                        </div>
+                    </span>
+
+                    <div class="form-group col-md-4">
+                        <label for="price">Price ($):</label>
+                    </div>
+                    <span class="error col-md-4">
+                        <div>
+                            <input type="text" id="price" class="formElement form-control" />
+                        </div>
+                        <div id="priceerror" class="sell-err-msg">
+                        </div>
+                    </span>
+
+                    <div class="form-group col-md-4">
+                        <label for="description">Description:</label>
+                    </div>
+                    <span class="error col-md-4">
+                        <div>
+                            <textarea rows="5" id="description" class="formElement form-control"></textarea>
+                        </div>
+                        <div id="descriptionerror" class="sell-err-msg">
+                        </div>
+                    </span>
+
+                    <div>
+                        <label for="gender">Gender</label>
+                    </div>
+                    <span class="error">
+                        <div>
+                            <select id="gender" class="sellerror">
+                                <option value="select">
+                                    Select a gender...
+                                </option>
+                                <option value="male">
+                                    Male
+                                </option>
+                                <option value="female">
+                                    Female
+                                </option>
+                            </select>
+                        </div>
+                        <div id="gendererror" class="sell-err-msg">
+                        </div>
+                    </span>
+                    <div>
+                        <label for="category">Category</label>
+                    </div>
+                    <span class="error">
+                        <div>
+                            <select id="category" class="sellerror">
+                                <option value="select">
+                                    Select a category...
+                                </option>
+                                <option value="tops">
+                                    Tops
+                                </option>
+                                <option value="trousers">
+                                    Trousers
+                                </option>
+                                <option value="shorts">
+                                    Shorts
+                                </option>
+                                <option value="skirts">
+                                    Skirts
+                                </option>
+                                <option value="dresses">
+                                    Dresses
+                                </option>
+                                <option value="jumpers">
+                                    Jumpers
+                                </option>
+                                <option value="coats">
+                                    Coats
+                                </option>
+                            </select>
+                        </div>
+                        <div id="categoryerror" class="sell-err-msg">
+                        </div>
+                    </span>
+                    <div>
+                        <label for="size">Size</label>
+                    </div>
+                    <span class="error">
+                        <div>
+                            <select id="size" class="sellerror">
+                                <option value="select">
+                                    Select a size...
+                                </option>
+                                <option value="xxl">
+                                    XXL
+                                </option>
+                                <option value="xl">
+                                    XL
+                                </option>
+                                <option value="l">
+                                    L
+                                </option>
+                                <option value="m">
+                                    M
+                                </option>
+                                <option value="s">
+                                    S
+                                </option>
+                                <option value="xs">
+                                    XS
+                                </option>
+                                <option value="xxs">
+                                    XXS
+                                </option>
+                            </select>
+                        </div>
+                        <div id="sizeerror" class="sell-err-msg">
+                        </div>
+                    </span>
+                    <div>
+                        <label for="colour">Colour</label>
+                    </div>
+                    <span class="error">
+                        <div>
+                            <select id="colour" class="sellerror">
+                                <option value="select">
+                                    Select a colour...
+                                </option>
+                                <option value="red">
+                                    Red
+                                </option>
+                                <option value="orange">
+                                    Orange
+                                </option>
+                                <option value="yellow">
+                                    Yellow
+                                </option>
+                                <option value="green">
+                                    Green
+                                </option>
+                                <option value="blue">
+                                    Blue
+                                </option>
+                                <option value="purple">
+                                    Purple
+                                </option>
+                                <option value="white">
+                                    White
+                                </option>
+                                <option value="black">
+                                    Black
+                                </option>
+                                <option value="brown">
+                                    Brown
+                                </option>
+                                <option value="multicoloured">
+                                    Multicoloured
+                                </option>
+                            </select>
+                        </div>
+                        <div id="colourerror" class="sell-err-msg">
+                        </div>
+                    </span>
+                    <div>
+                        <input id="add" type='submit' class="btn btn-outline-success" value='Create listing' />
+                    </div>
+                </fieldset>
+            </form>
+        </section>
     </main>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src='./script_sell.js'></script>
 
 </html>
