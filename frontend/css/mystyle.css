@@ -249,6 +249,8 @@ footer{
     color: #3E4551;
     border-style: none;
 }
+
+/* main.html */
 .card {
     box-shadow: 0 0 10px -5px black;
     margin: 10px;
@@ -279,6 +281,14 @@ footer{
 }
 .card-footer-img {
     width: 15%;
+}
+.oi-heart{
+    border-style: none;
+    background-color: white;
+}
+.oi-check{
+    border-style: none;
+    background-color: white;
 }
 #products {
     display: flex;
