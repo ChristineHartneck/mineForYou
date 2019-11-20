@@ -1,0 +1,34 @@
+{
+  "name": "mineforyou",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "ejs": "^2.7.4",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "http-errors": "^1.7.3",
+    "mongodb": "^3.3.4",
+    "mongoose": "^5.7.11",
+    "morgan": "^1.9.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChristineHartneck/mineForYou.git"
+  },
+  "author": "jordan allen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChristineHartneck/mineForYou/issues"
+  },
+  "homepage": "https://github.com/ChristineHartneck/mineForYou#readme"
+}

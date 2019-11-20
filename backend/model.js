@@ -8,29 +8,28 @@ let userSchema = mongoose.Schema({
 				 required : true, 
 				 unique : true },
 	password : { type : String,
-				 required : true }
+				 required : true },
+	uploadedItems : {type : Array},
+	boughtItems : {type : Array},
+	likedItems : {type : Array}
 });
 
-let ProductSchema = mongoose.Schema({
+let productSchema = mongoose.Schema({
     gender: {type : String},
     pictureUrl: {type : String},
     title: {type : String},
     description: {type : String},
     category: {type : String},
-    colour: {type : String}
-    price: {type : Number}
+    colour: {type : String},
+    price: {type : Number},
     size: {type : String},
-    uploadedBy: 1,
-    likes: 0,
-    boughtBy: 1,
-    forSale: {type : Boolean},
-	id : { 
-			type : Number,
-			required : true }
+    uploadedBy: {type : String},
+    boughtBy: {type : String},
+    forSale: {type : Boolean}
 });
 
-let User = mongoose.model( 'User', userSchema );
-let Product = mongoose.model( 'Product', productSchema );
+let User = mongoose.model( 'user', userSchema );
+let Product = mongoose.model( 'products', productSchema );
 
 let UserList = {
 	register : function( user ){
@@ -77,7 +76,7 @@ let UserList = {
 	}
 };
 
-let ProdctList = {
+let ProductList = {
 	get : function(){
 		return Product.find()
 				.then( products => {
@@ -136,8 +135,5 @@ let ProdctList = {
 			});
 	}
 };
-
-
-Character.deleteOne({ name: 'Eddard Stark' }).then(next);
 
 module.exports = { UserList, ProductList };

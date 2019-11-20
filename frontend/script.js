@@ -53,7 +53,7 @@ var items = [{
 
 function fillProducts() {
     for (var i = 0; i < items.length; i++) {
-        $("#products").append("<div data-toggle='modal' data-target='#exampleModalCenter" + i + "' class='card' style='width: 25rem; '> <div class='card-wrapper'> <img src='" + items[i].pictureUrl + "'class='card-img-top' alt='...'></div> <div class='card-body'> <p style='float:left; width: 50%;'>$ " + items[i].price.toFixed(2) + "</p> <p style='float:left; width: 30%;'>" + items[i].size + "</p> <button class='oi oi-heart' onclick='myfunc(this)'></button>  </div>  </div>")
+        $("#products").append("<div data-toggle='modal' data-target='#exampleModalCenter" + i + "' class='card' style='width: 25rem; '> <div class='card-wrapper'> <img src='" + items[i].pictureUrl + "'class='card-img-top' alt='...'></div> <div class='card-body'> <p style='float:left; width: 48%;'>$ " + items[i].price.toFixed(2) + "</p> <p style='float:left; width: 40%;'>" + items[i].size + "</p> <button class='oi oi-heart' onclick='myfunc(this)'></button>  </div>  </div>")
     }
     for (var i = 0; i < items.length; i++) {
         $("#models").append(
@@ -63,7 +63,7 @@ function fillProducts() {
             '<div class="modal-body">' +
             '<div class="modal-body">' +
             '<div class="table">' +
-            '<img class="modal-img" scr=' + items[i].pictureUrl + '>' +
+            '<img class="modal-img" src=' + items[i].pictureUrl + ' height=100% width=100%>' +
             '</div>' +
             '<div class="table" id="modal-details">' +
             '<h2 class="modal-title" id="exampleModalCenterTitle">' + items[i].title + '</h2>' +
@@ -110,7 +110,7 @@ $('#filt-bt').on('click', function (event) {
         }
     }
     for (var i = 0; i < items.length; i++) {
-        $("#products").append("<div data-toggle='modal' data-target='#exampleModalCenter" + i + "' class='card' style='width: 25rem; '> <div class='card-wrapper'> <img src='" + items[i].pictureUrl + "'class='card-img-top' alt='...'></div> <div class='card-body'> <p style='float:left; width: 50%;'>$ " + items[i].price.toFixed(2) + "</p> <p style='float:left; width: 30%;'>" + items[i].size + "</p> <button class='oi oi-heart' onclick='myfunc(this)'></button>  </div>  </div>")
+        $("#products").append("<div data-toggle='modal' data-target='#exampleModalCenter" + i + "' class='card' style='width: 25rem; '> <div class='card-wrapper'> <img src='" + items[i].pictureUrl + "'class='card-img-top' alt='...'></div> <div class='card-body'> <p style='float:left; width: 48%;'>$ " + items[i].price.toFixed(2) + "</p> <p style='float:left; width: 40%;'>" + items[i].size + "</p> <button class='oi oi-heart' onclick='myfunc(this)'></button>  </div>  </div>")
     }
     for (var i = 0; i < items.length; i++) {
         $("#models").append(
@@ -120,7 +120,7 @@ $('#filt-bt').on('click', function (event) {
             '<div class="modal-body">' +
             '<div class="modal-body">' +
             '<div class="table">' +
-            '<img class="modal-img" scr=' + items[i].pictureUrl + '>' + 
+            '<img class="modal-img" src=' + items[i].pictureUrl + ' height=100% width=100%>' + 
             '</div>' +
             '<div class="table" id="modal-details">' +
             '<h2 class="modal-title" id="exampleModalCenterTitle">' + items[i].title + '</h2>' +
@@ -161,7 +161,7 @@ $('#srch-bt').on('click', function (event) {
     }
     $('#srch-fld').val('');
     for (var i = 0; i < items.length; i++) {
-        $("#products").append("<div data-toggle='modal' data-target='#exampleModalCenter" + i + "' class='card' style='width: 25rem; '> <div class='card-wrapper'> <img src='" + items[i].pictureUrl + "'class='card-img-top' alt='...'></div> <div class='card-body'> <p style='float:left; width: 50%;'>$ " + items[i].price.toFixed(2) + "</p> <p style='float:left; width: 30%;'>" + items[i].size + "</p> <button class='oi oi-heart' onclick='myfunc(this)'></button>  </div>  </div>")
+        $("#products").append("<div data-toggle='modal' data-target='#exampleModalCenter" + i + "' class='card' style='width: 25rem; '> <div class='card-wrapper'> <img src='" + items[i].pictureUrl + "'class='card-img-top' alt='...'></div> <div class='card-body'> <p style='float:left; width: 48%;'>$ " + items[i].price.toFixed(2) + "</p> <p style='float:left; width: 40%;'>" + items[i].size + "</p> <button class='oi oi-heart' onclick='myfunc(this)'></button>  </div>  </div>")
     }
     for (var i = 0; i < items.length; i++) {
         $("#models").append(
@@ -171,7 +171,7 @@ $('#srch-bt').on('click', function (event) {
             '<div class="modal-body">' +
             '<div class="modal-body">' +
             '<div class="table">' +
-            '<img class="modal-img" scr=' + items[i].pictureUrl + '>' + 
+            '<img class="modal-img" src=' + items[i].pictureUrl + ' height=100% width=100%>' + 
             '</div>' +
             '<div class="table" id="modal-details">' +
             '<h2 class="modal-title" id="exampleModalCenterTitle">' + items[i].title + '</h2>' +

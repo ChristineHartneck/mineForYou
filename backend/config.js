@@ -1,2 +1,2 @@
-exports.DATABASE_URL = process.env.DATABASE_URL || "mongodb://localhost/MineForYou"; //"mongodb+srv://root:root@cluster0-6qr82.mongodb.net/MineForYou?retryWrites=true&w=majority"
+exports.DATABASE_URL = process.env.DATABASE_URL || "mongodb+srv://root:root@cluster0-6qr82.mongodb.net/MineForYou?retryWrites=true&w=majority" //"mongodb://localhost/MineForYou"; 
 exports.PORT = process.env.PORT || 8181;

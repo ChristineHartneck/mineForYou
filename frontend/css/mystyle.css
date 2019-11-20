@@ -128,7 +128,7 @@ nav {
 }
 
 #filt-bt{
-    margin-right: 5px;
+    margin-right: 70px;
 }
 #details{
     list-style: none;
@@ -280,6 +280,14 @@ footer{
 .card-footer-img {
     width: 15%;
 }
+.oi-heart{
+    border-style: none;
+    background-color: white;
+}
+.oi-check{
+    border-style: none;
+    background-color: white;
+}
 #products {
     display: flex;
     flex-direction: row;
@@ -376,8 +384,9 @@ footer{
     cursor: pointer;
 }
 
-#search-btn {
+#srch-bt {
     margin-left: 10px;
+    padding: none;
 }
 .form-inline {
     display: flex;
