@@ -33,10 +33,22 @@ $(document).ready(function(){
     })
 })
 
-$.ajax({
-	url: "/api/user/register",
-	method: "POST",
-	success : function(responseJSON){
-		console.log(responseJSON);
-	}
+$('#Sign-up').on('click',function(){
+    let obj = {
+        username: $('#username').val(),
+        password: $('#password').val()
+    }
+    console.log(obj);
+    $.ajax({
+        url: "/api/user/register",
+        method: "POST",
+        data: JSON.stringify(obj),
+        contentType: "application/json",
+        success : function(responseJSON){
+            $(location).attr('href','main.html');
+        },
+        error: function(responseJSON){
+            console.log(responseJSON);
+        }
+    })
 })

@@ -45,6 +45,8 @@ app.post("/api/user/register", jsonParser, (req, res, next) => {
 	//uploadedItems: [],
 	//boughtItems:[],
 	//likedItems: []
+	console.log("username" + username);
+	console.log("password" + password);
 
 	// Validations missing
 
