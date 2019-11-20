@@ -128,7 +128,7 @@ nav {
 }
 
 #filt-bt{
-    margin-right: 5px;
+    margin-right: 70px;
 }
 #details{
     list-style: none;
@@ -376,8 +376,9 @@ footer{
     cursor: pointer;
 }
 
-#search-btn {
+#srch-bt {
     margin-left: 10px;
+    padding: none;
 }
 .form-inline {
     display: flex;
@@ -436,6 +437,7 @@ footer{
 }
 #add{
     margin-top: 20px;
+    margin-bottom: 50px;
     background-color: white; 
     color: #27ccc0;
     border: 2px solid #27ccc0;
