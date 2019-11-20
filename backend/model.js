@@ -32,6 +32,15 @@ let User = mongoose.model( 'user', userSchema );
 let Product = mongoose.model( 'products', productSchema );
 
 let UserList = {
+	get : function(){
+		return User.find()
+				.then( user => {
+					return user;
+				})
+				.catch( error => {
+					throw Error( error );
+				});
+	},
 	register : function( user ){
 		return User.find( {username : user.username} )
 			.then( checkUser => {

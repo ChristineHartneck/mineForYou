@@ -23,7 +23,21 @@ app.use(express.static("frontend"));
 
 app.use(morgan("dev"));
 
-app.post("/api/users/register", jsonParser, (req, res, next) => {
+app.get("/api/user", (req, res, next) => {
+	UserList.get()
+		.then(user => {
+			return res.status(200).json(user);
+		})
+		.catch(error => {
+			res.statusMessage = "Something went wrong with the DB. Try again later.";
+			return res.status(500).json({
+				status: 500,
+				message: "Something went wrong with the DB. Try again later."
+			})
+		});
+});
+
+app.post("/api/user/register", jsonParser, (req, res, next) => {
 	let { username, password } = req.body;
 	// all 5 attributes?
 	//username: "Jessica",
@@ -48,7 +62,7 @@ app.post("/api/users/register", jsonParser, (req, res, next) => {
 		});
 });
 
-app.post("/api/users/login", jsonParser, (req, res, next) => {
+app.post("/api/user/login", jsonParser, (req, res, next) => {
 	let { username, password } = req.body;
 	// all 5 attributes?
 	//username: "Jessica",
@@ -130,14 +144,6 @@ app.post("/api/postProduct", jsonParser, (req, res, next) => {
 			});
 		});
 });
-
-// $.ajax({
-// 	url: "/api/products",
-// 	method: "GET",
-// 	success : function(responseJSON){
-// 		console.log(responseJSON);
-// 	}
-// })
 
 app.put("/api/updateProduct", jsonParser, (req, res, next) => {
 	let firstName = req.body.firstName;

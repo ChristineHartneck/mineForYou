@@ -32,3 +32,11 @@ $(document).ready(function(){
         }
     })
 })
+
+$.ajax({
+	url: "/api/user/register",
+	method: "POST",
+	success : function(responseJSON){
+		console.log(responseJSON);
+	}
+})
