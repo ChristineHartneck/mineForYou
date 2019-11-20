@@ -28,7 +28,7 @@ let productSchema = mongoose.Schema({
     forSale: {type : Boolean}
 });
 
-let User = mongoose.model( 'user', userSchema );
+let User = mongoose.model( 'users', userSchema );
 let Product = mongoose.model( 'products', productSchema );
 
 let UserList = {

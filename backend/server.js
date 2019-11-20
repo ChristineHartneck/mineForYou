@@ -23,32 +23,22 @@ app.use(express.static("frontend"));
 
 app.use(morgan("dev"));
 
-app.get("/api/user", (req, res, next) => {
-	UserList.get()
-		.then(user => {
-			return res.status(200).json(user);
-		})
-		.catch(error => {
-			res.statusMessage = "Something went wrong with the DB. Try again later.";
-			return res.status(500).json({
-				status: 500,
-				message: "Something went wrong with the DB. Try again later."
-			})
-		});
-});
+// app.get("/api/user", (req, res, next) => {
+// 	UserList.get()
+// 		.then(user => {
+// 			return res.status(200).json(user);
+// 		})
+// 		.catch(error => {
+// 			res.statusMessage = "Something went wrong with the DB. Try again later.";
+// 			return res.status(500).json({
+// 				status: 500,
+// 				message: "Something went wrong with the DB. Try again later."
+// 			})
+// 		});
+// });
 
 app.post("/api/user/register", jsonParser, (req, res, next) => {
 	let { username, password } = req.body;
-	// all 5 attributes?
-	//username: "Jessica",
-	//password: "2d3345",
-	//uploadedItems: [],
-	//boughtItems:[],
-	//likedItems: []
-	console.log("username" + username);
-	console.log("password" + password);
-
-	// Validations missing
 
 	let user = { username, password };
 	UserList.register(user)
@@ -66,14 +56,6 @@ app.post("/api/user/register", jsonParser, (req, res, next) => {
 
 app.post("/api/user/login", jsonParser, (req, res, next) => {
 	let { username, password } = req.body;
-	// all 5 attributes?
-	//username: "Jessica",
-	//password: "2d3345",
-	//uploadedItems: [],
-	//boughtItems:[],
-	//likedItems: []
-
-	// Validations missing
 
 	let user = { username, password };
 	UserList.login(user)
@@ -103,7 +85,7 @@ app.get("/api/products", (req, res, next) => {
 		});
 });
 
-app.post("/api/postProduct", jsonParser, (req, res, next) => {
+app.post("/api/Product/post", jsonParser, (req, res, next) => {
 	let gender = req.body.gender;
 	let pictureUrl = req.body.pictureUrl;
 	let title = req.body.title;
@@ -133,13 +115,13 @@ app.post("/api/postProduct", jsonParser, (req, res, next) => {
 	ProductList.post(newProduct)
 		.then(product => {
 			return res.status(201).json({
-				message: "Student added to the list",
+				message: "Product added to the list",
 				status: 201,
 				product: product
 			});
 		})
 		.catch(error => {
-			res.statusMessage = "Something went wrong with the DB. Try again later.";
+			res.statusMessage = error;
 			return res.status(500).json({
 				status: 500,
 				message: "Something went wrong with the DB. Try again later."
@@ -147,36 +129,11 @@ app.post("/api/postProduct", jsonParser, (req, res, next) => {
 		});
 });
 
-app.put("/api/updateProduct", jsonParser, (req, res, next) => {
-	let firstName = req.body.firstName;
-	let lastName = req.body.lastName;
+app.put("/api/Product/put", jsonParser, (req, res, next) => {
 	let id = req.body.id;
+	let updatedProduct = { _id: id };
 
-	/*if ( !id ){
-		res.statusMessage = "Missing 'id' field in body!";
-		return res.status( 406 ).json({
-			message : "Missing 'id' field in body!",
-			status : 406
-		});
-	}
-	
-	if( !firstName && !lastName ){
-		res.statusMessage = "You must at least send either firstName or lastName to update!";
-		return res.status( 406 ).json({
-			message : "You must at least send either firstName or lastName to update!",
-			status : 406
-		});
-	}
-	
-	let updatedStudent = { id : id };
-	
-	if ( firstName ){
-		updatedStudent.firstName = firstName;
-	}
-	
-	if ( lastName ){
-		updatedStudent.lastName = lastName;
-	}*/
+	updatedProduct.forSale = false;
 
 	ProductList.put(updatedProduct)
 		.then(product => {

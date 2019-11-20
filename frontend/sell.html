@@ -46,7 +46,7 @@
                     </div>
                     <span class="error col-md-4">
                         <div>
-                            <input type="url" id="picture" class="formElement form-control" />
+                            <input type="text" id="picture" class="formElement form-control" />
                         </div>
                         <div id="pictureerror" class="sell-err-msg">
                         </div>
@@ -94,10 +94,10 @@
                                 <option value="select">
                                     Select a gender...
                                 </option>
-                                <option value="male">
+                                <option value="Male">
                                     Male
                                 </option>
-                                <option value="female">
+                                <option value="Female">
                                     Female
                                 </option>
                             </select>
@@ -114,25 +114,25 @@
                                 <option value="select">
                                     Select a category...
                                 </option>
-                                <option value="tops">
+                                <option value="Tops">
                                     Tops
                                 </option>
-                                <option value="trousers">
+                                <option value="Trousers">
                                     Trousers
                                 </option>
-                                <option value="shorts">
+                                <option value="Shorts">
                                     Shorts
                                 </option>
-                                <option value="skirts">
+                                <option value="Skirts">
                                     Skirts
                                 </option>
-                                <option value="dresses">
+                                <option value="Dresses">
                                     Dresses
                                 </option>
-                                <option value="jumpers">
+                                <option value="Jumpers">
                                     Jumpers
                                 </option>
-                                <option value="coats">
+                                <option value="Coats">
                                     Coats
                                 </option>
                             </select>
@@ -149,25 +149,25 @@
                                 <option value="select">
                                     Select a size...
                                 </option>
-                                <option value="xxl">
+                                <option value="XXL">
                                     XXL
                                 </option>
-                                <option value="xl">
+                                <option value="XL">
                                     XL
                                 </option>
-                                <option value="l">
+                                <option value="L">
                                     L
                                 </option>
-                                <option value="m">
+                                <option value="M">
                                     M
                                 </option>
-                                <option value="s">
+                                <option value="S">
                                     S
                                 </option>
-                                <option value="xs">
+                                <option value="XS">
                                     XS
                                 </option>
-                                <option value="xxs">
+                                <option value="XXS">
                                     XXS
                                 </option>
                             </select>
@@ -184,34 +184,34 @@
                                 <option value="select">
                                     Select a colour...
                                 </option>
-                                <option value="red">
+                                <option value="Red">
                                     Red
                                 </option>
-                                <option value="orange">
+                                <option value="Orange">
                                     Orange
                                 </option>
-                                <option value="yellow">
+                                <option value="Yellow">
                                     Yellow
                                 </option>
-                                <option value="green">
+                                <option value="Green">
                                     Green
                                 </option>
-                                <option value="blue">
+                                <option value="Blue">
                                     Blue
                                 </option>
-                                <option value="purple">
+                                <option value="Purple">
                                     Purple
                                 </option>
-                                <option value="white">
+                                <option value="White">
                                     White
                                 </option>
-                                <option value="black">
+                                <option value="Black">
                                     Black
                                 </option>
-                                <option value="brown">
+                                <option value="Brown">
                                     Brown
                                 </option>
-                                <option value="multicoloured">
+                                <option value="Multicoloured">
                                     Multicoloured
                                 </option>
                             </select>
@@ -222,9 +222,18 @@
                     <div>
                         <input id="add" type='submit' class="btn btn-outline-success" value='Create listing' />
                     </div>
+                    <div id="creat">
+                        <div id="creat-wrapper">
+                            <h3><span class='oi oi-heart'></span></h3>
+                            <h3>Product is created</h3>
+                            <button class="btn" id="creat-btn" type="submit" onclick="finishCreat()">Close</button>
+                        </div>
+                    </div>
                 </fieldset>
             </form>
         </section>
+        <div id="errpst">
+        </div>
     </main>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
