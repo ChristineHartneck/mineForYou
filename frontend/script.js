@@ -1,5 +1,6 @@
 var items = [{
     gender: "Male",
+    pictureUrl: "https://static.kiabishop.com/en/images/slim-fit-plain-eco-design-t-shirt-brown-men-size-s-to-xxl-wr061_1_zc1.jpg",
     title: "Shirt",
     description: "Nice shirt. 1x worn. by urban outfitters. super soft material.",
     category: "Tops",
@@ -12,6 +13,7 @@ var items = [{
 },
 {
     gender: "Female",
+    pictureUrl: "https://1335481946.rsc.cdn77.org/temp/1552046350_5eec3b2abdb4e1ab79996a37b93a6d00.JPG",
     title: "Black Dress",
     description: "Offer here a knitted dress from vero moda. Without belt. Top condition.",
     category: "Dresses",
@@ -24,6 +26,7 @@ var items = [{
 },
 {
     gender: "Female",
+    pictureUrl: "https://gloimg.zafcdn.com/zaful/pdm-product-pic/Clothing/2019/05/28/goods-first-img/1560118755030994715.jpg",
     title: "Nice Top",
     description: "White t-shirt with flamingo print, it was worn only a few times, the size is normal, it fits figure-hugging but not skintight.",
     category: "Tops",
@@ -36,6 +39,7 @@ var items = [{
 },
 {
     gender: "Male",
+    pictureUrl: "http://sumbersinar.co/wp-content/uploads/2018/05/levis-jeans-men-slim-taper-fit-adapt-light-wash-performance-denim-men-jeans-levi-505-jeans-mens-uk.jpg",
     title: "Levi's",
     description: "Well preserved jeans from Armani. Smoke and animal free household. Pockets from the inside have a hole.",
     category: "Trousers",
@@ -49,7 +53,7 @@ var items = [{
 
 function fillProducts() {
     for (var i = 0; i < items.length; i++) {
-        $("#products").append("<div data-toggle='modal' data-target='#exampleModalCenter" + i + "' class='card' style='width: 25rem; '> <img src='src/bild1.jpg' class='card-img-top' alt='...'> <div class='card-body'> <p style='float:left; width: 50%;'>$ " + items[i].price.toFixed(2) + "</p> <p style='float:left; width: 30%;'>" + items[i].size + "</p> <button class='oi oi-heart' onclick='myfunc(this)'></button>  </div>  </div>")
+        $("#products").append("<div data-toggle='modal' data-target='#exampleModalCenter" + i + "' class='card' style='width: 25rem; '> <div class='card-wrapper'> <img src='" + items[i].pictureUrl + "'class='card-img-top' alt='...'></div> <div class='card-body'> <p style='float:left; width: 50%;'>$ " + items[i].price.toFixed(2) + "</p> <p style='float:left; width: 30%;'>" + items[i].size + "</p> <button class='oi oi-heart' onclick='myfunc(this)'></button>  </div>  </div>")
     }
     for (var i = 0; i < items.length; i++) {
         $("#models").append(
@@ -59,13 +63,7 @@ function fillProducts() {
             '<div class="modal-body">' +
             '<div class="modal-body">' +
             '<div class="table">' +
-            '<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">' +
-            '<div class="carousel-inner" role="listbox">' +
-            '<div class="carousel-item">' +
-            '<img class="d-block w-100 modal-img" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/img%20(23).jpg" alt="First slide">' + 
-            '</div>' +
-            '</div>' +
-            '</div>' +
+            '<img class="modal-img" scr=' + items[i].pictureUrl + '>' +
             '</div>' +
             '<div class="table" id="modal-details">' +
             '<h2 class="modal-title" id="exampleModalCenterTitle">' + items[i].title + '</h2>' +
@@ -112,7 +110,7 @@ $('#filt-bt').on('click', function (event) {
         }
     }
     for (var i = 0; i < items.length; i++) {
-        $("#products").append("<div data-toggle='modal' data-target='#exampleModalCenter" + i + "' class='card' style='width: 25rem; '> <img src='src/bild1.jpg' class='card-img-top' alt='...'> <div class='card-body'> <p style='float:left; width: 50%;'>$ " + items[i].price.toFixed(2) + "</p> <p style='float:left; width: 30%;'>" + items[i].size + "</p> <button class='oi oi-heart' onclick='myfunc(this)'></button>  </div>  </div>")
+        $("#products").append("<div data-toggle='modal' data-target='#exampleModalCenter" + i + "' class='card' style='width: 25rem; '> <div class='card-wrapper'> <img src='" + items[i].pictureUrl + "'class='card-img-top' alt='...'></div> <div class='card-body'> <p style='float:left; width: 50%;'>$ " + items[i].price.toFixed(2) + "</p> <p style='float:left; width: 30%;'>" + items[i].size + "</p> <button class='oi oi-heart' onclick='myfunc(this)'></button>  </div>  </div>")
     }
     for (var i = 0; i < items.length; i++) {
         $("#models").append(
@@ -122,13 +120,7 @@ $('#filt-bt').on('click', function (event) {
             '<div class="modal-body">' +
             '<div class="modal-body">' +
             '<div class="table">' +
-            '<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">' +
-            '<div class="carousel-inner" role="listbox">' +
-            '<div class="carousel-item">' +
-            '<img class="d-block w-100 modal-img" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/img%20(23).jpg" alt="First slide">' + 
-            '</div>' +
-            '</div>' +
-            '</div>' +
+            '<img class="modal-img" scr=' + items[i].pictureUrl + '>' + 
             '</div>' +
             '<div class="table" id="modal-details">' +
             '<h2 class="modal-title" id="exampleModalCenterTitle">' + items[i].title + '</h2>' +
@@ -169,7 +161,7 @@ $('#srch-bt').on('click', function (event) {
     }
     $('#srch-fld').val('');
     for (var i = 0; i < items.length; i++) {
-        $("#products").append("<div data-toggle='modal' data-target='#exampleModalCenter" + i + "' class='card' style='width: 25rem; '> <img src='src/bild1.jpg' class='card-img-top' alt='...'> <div class='card-body'> <p style='float:left; width: 50%;'>$ " + items[i].price.toFixed(2) + "</p> <p style='float:left; width: 30%;'>" + items[i].size + "</p> <button class='oi oi-heart' onclick='myfunc(this)'></button>  </div>  </div>")
+        $("#products").append("<div data-toggle='modal' data-target='#exampleModalCenter" + i + "' class='card' style='width: 25rem; '> <div class='card-wrapper'> <img src='" + items[i].pictureUrl + "'class='card-img-top' alt='...'></div> <div class='card-body'> <p style='float:left; width: 50%;'>$ " + items[i].price.toFixed(2) + "</p> <p style='float:left; width: 30%;'>" + items[i].size + "</p> <button class='oi oi-heart' onclick='myfunc(this)'></button>  </div>  </div>")
     }
     for (var i = 0; i < items.length; i++) {
         $("#models").append(
@@ -179,13 +171,7 @@ $('#srch-bt').on('click', function (event) {
             '<div class="modal-body">' +
             '<div class="modal-body">' +
             '<div class="table">' +
-            '<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">' +
-            '<div class="carousel-inner" role="listbox">' +
-            '<div class="carousel-item">' +
-            '<img class="d-block w-100 modal-img" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/img%20(23).jpg" alt="First slide">' + 
-            '</div>' +
-            '</div>' +
-            '</div>' +
+            '<img class="modal-img" scr=' + items[i].pictureUrl + '>' + 
             '</div>' +
             '<div class="table" id="modal-details">' +
             '<h2 class="modal-title" id="exampleModalCenterTitle">' + items[i].title + '</h2>' +
@@ -225,4 +211,15 @@ function thanks() {
 }
 function finishBuying() {
     $('#thanks').css("display", "none");
+}
+//$(document).on("click", ".openImageDialog", function () {
+   // var myImageId = $(this).data('id');
+   // $(".modal-body #myImage").attr("src", myImageId);
+//});
+
+function modalOpen() {
+		$('.card-img-top').on('click', function() {
+			$('.modal-img').attr('src', $(this).find('img').attr('src'));
+			$('#exampleModalCenter').modal('show');   
+		});		
 }
