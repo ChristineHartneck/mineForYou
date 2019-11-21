@@ -23,19 +23,20 @@ app.use(express.static("frontend"));
 
 app.use(morgan("dev"));
 
-// app.get("/api/user", (req, res, next) => {
-// 	UserList.get()
-// 		.then(user => {
-// 			return res.status(200).json(user);
-// 		})
-// 		.catch(error => {
-// 			res.statusMessage = "Something went wrong with the DB. Try again later.";
-// 			return res.status(500).json({
-// 				status: 500,
-// 				message: "Something went wrong with the DB. Try again later."
-// 			})
-// 		});
-// });
+app.get("/api/user/username", (req, res, next) => {
+	let username = req.body.username;
+	UserList.get({ username: username })
+		.then(user => {
+			return res.status(200).json(user);
+		})
+		.catch(error => {
+			res.statusMessage = "Something went wrong with the DB. Try again later.";
+			return res.status(500).json({
+				status: 500,
+				message: "Something went wrong with the DB. Try again later."
+			})
+		});
+});
 
 app.post("/api/user/register", jsonParser, (req, res, next) => {
 	let { username, password } = req.body;
@@ -61,6 +62,85 @@ app.post("/api/user/login", jsonParser, (req, res, next) => {
 	UserList.login(user)
 		.then(goodUser => {
 			return res.status(202).json(goodUser);
+		})
+		.catch(error => {
+			res.statusMessage = "Something went wrong with the DB. Try again later.";
+			return res.status(500).json({
+				status: 500,
+				message: "Something went wrong with the DB. Try again later."
+			})
+		});
+});
+
+app.delete("/api/removeUser", (req, res) => {
+	let username = req.body.username;
+
+	UserList.deleteById(username)
+		.then(user => {
+			if (!user) {
+				res.statusMessage = "User not found on the list";
+				return res.status(404).json({
+					message: "User not found on the list",
+					status: 404
+				});
+			}
+			return res.status(200).json(user);
+		})
+		.catch(error => {
+			res.statusMessage = "Something went wrong with the DB. Try again later.";
+			return res.status(500).json({
+				message: "Something went wrong with the DB. Try again later.",
+				status: 500
+			});
+		})
+});
+
+app.post("/api/user/sales", jsonParser, (req, res, next) => {
+	let username = req.body.sales;
+	console.log(username);
+	UserList.get({ username: username })
+		.then(user => {
+			return res.status(200).json(user);
+		})
+		.catch(error => {
+			res.statusMessage = "Something went wrong with the DB. Try again later.";
+			return res.status(500).json({
+				status: 500,
+				message: "Something went wrong with the DB. Try again later."
+			})
+		})
+});
+
+app.put("/api/user/sellput", jsonParser, (req, res, next) => {
+	let obj = req.body.obj;
+	let user = req.body.username;
+	UserList.get({ username: user })
+		.then(user => {
+			console.log(user)
+			user[0].uploadedItems.push(obj);
+			return UserList.put(user)
+				.then(user => {
+					res.status(200).json({
+						message: "User is successfully updated",
+						status: 200,
+						user: user
+					});
+				})
+				.catch(err => {
+					if (err.message == 404) {
+						return res.status(404).json({
+							message: "User is not found in the list",
+							status: 404
+						});
+					}
+					else {
+						res.statusMessage = "Something went wrong with the DB. Try again later.";
+						return res.status(500).json({
+							status: 500,
+							message: "Something went wrong with the DB. Try again later."
+						})
+					}
+				});
 		})
 		.catch(error => {
 			res.statusMessage = "Something went wrong with the DB. Try again later.";
@@ -130,10 +210,9 @@ app.post("/api/Product/post", jsonParser, (req, res, next) => {
 });
 
 app.put("/api/Product/put", jsonParser, (req, res, next) => {
-	let id = req.body.id;
-	let updatedProduct = { _id: id };
-
+	let updatedProduct = req.body;
 	updatedProduct.forSale = false;
+	console.log(updatedProduct);
 
 	ProductList.put(updatedProduct)
 		.then(product => {
@@ -159,30 +238,6 @@ app.put("/api/Product/put", jsonParser, (req, res, next) => {
 			}
 		});
 });
-
-app.delete("/api/removeProduct", (req, res) => {
-	let id = req.params._id;
-
-	ProductList.deleteById(req.params._id)
-		.then(product => {
-			if (!product) {
-				res.statusMessage = "Product id not found on the list";
-				return res.status(404).json({
-					message: "Product id not found on the list",
-					status: 404
-				});
-			}
-			return res.status(200).json(product);
-		})
-		.catch(error => {
-			res.statusMessage = "Something went wrong with the DB. Try again later.";
-			return res.status(500).json({
-				message: "Something went wrong with the DB. Try again later.",
-				status: 500
-			});
-		})
-});
-
 
 let server;
 

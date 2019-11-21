@@ -69,7 +69,6 @@ $('#add').on('click', function () {
         boughtBy: "",
         forSale: true
     }
-    console.log(obj);
     creat();
     $.ajax({
         url: "/api/Product/post",
@@ -77,6 +76,18 @@ $('#add').on('click', function () {
         data: JSON.stringify(obj),
         contentType: "application/json",
         success: function () {
+            var username = localStorage.getItem("username");
+            $.ajax({
+                url: "/api/user/sellput",
+                method: "PUT",
+                data: JSON.stringify({"obj": obj, "username": username}),
+                contentType: "application/json",
+                success: function () {
+                },
+                error: function (responseJSON) {
+                    $('#errpst').text("There was an error, please try again later");
+                }
+            })
         },
         error: function (responseJSON) {
             $('#errpst').text("There was an error, please try again later");
@@ -84,10 +95,10 @@ $('#add').on('click', function () {
     })
 })
 
-function creat(){
-    $('#creat').css("display","flex");
+function creat() {
+    $('#creat').css("display", "flex");
 }
-function finishCreat(){
-    $('#creat').css("display","none");
+function finishCreat() {
+    $('#creat').css("display", "none");
     $(location).attr('href', 'sell.html');
 }
