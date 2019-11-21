@@ -147,7 +147,7 @@ nav {
     flex-direction: column;
 }
 #listing{
-    padding-left: 50px;
+    margin-left: 50px;
 }
 #create{
     margin: 10px;
