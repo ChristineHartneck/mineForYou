@@ -147,7 +147,7 @@ nav {
     flex-direction: column;
 }
 #listing{
-    padding-left: 10px;
+    padding-left: 50px;
 }
 #create{
     margin: 10px;
@@ -458,9 +458,6 @@ footer{
     padding-left: 35px;
     color: red;
     font-size: 150%;
-}
-.main-sell{
-    margin-left: 40px;
 }
 #add{
     margin-top: 20px;
