@@ -147,7 +147,11 @@ nav {
     flex-direction: column;
 }
 #listing{
+<<<<<<< HEAD
     padding-left: 40px;
+=======
+    padding-left: 50px;
+>>>>>>> christine
 }
 #create{
     margin: 10px;
@@ -459,7 +463,10 @@ footer{
     color: red;
     font-size: 150%;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> christine
 #add{
     margin-top: 20px;
     margin-bottom: 50px;
